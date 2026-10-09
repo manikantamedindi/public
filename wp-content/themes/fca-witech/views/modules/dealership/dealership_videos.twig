@@ -59,3 +59,58 @@
         <a class="videos__video__button" data-youtube-id="G7jYY6j6_nU"></a>
     </div> -->
 </div>
+
+
+<script>
+$(document).ready(function() {
+    // Delay slightly to ensure script.js has already bound its handlers so we can override them
+    setTimeout(function() {
+        $(".videos__video__button").off('click').on('click', function(e) {
+            e.preventDefault();
+            var yId = $(this).data("youtube-id");
+            
+            $("#dealership_video").addClass("video--active");
+            
+            // Destroy any existing player to prevent black screen/broken states
+            if (window.youtubePlayer && typeof window.youtubePlayer.destroy === 'function') {
+                try { window.youtubePlayer.destroy(); } catch(e) {}
+            }
+            
+            // Force reset the DOM for the placeholder to guarantee YT API can mount it
+            $("#dealership_video iframe").remove();
+            $("#dealership_video__placeholder").remove();
+            $("#dealership_video .dealership_video__wrapper").append('<div class="dealership_video__placeholder" id="dealership_video__placeholder"></div>');
+            
+            // Create a completely fresh player with the correct video ID
+            window.youtubePlayer = new YT.Player('dealership_video__placeholder', {
+                videoId: yId,
+                playerVars: { controls: 1, modestbranding: 0, rel: 0, showinfo: 1, fs: 1, autoplay: 1 },
+                events: {
+                    onReady: function(event) {
+                        event.target.playVideo();
+                    },
+                    onStateChange: function(event) {
+                        if (event.data == YT.PlayerState.ENDED) {
+                            event.target.seekTo(0);
+                            $("#dealership_video").removeClass("video--active");
+                        }
+                    }
+                }
+            });
+        });
+
+        $("#dealership_video_stop").off('click').on('click', function(e) {
+            e.preventDefault();
+            if (window.youtubePlayer && typeof window.youtubePlayer.stopVideo === 'function') {
+                try { window.youtubePlayer.stopVideo(); } catch(e) {}
+            }
+            $("#dealership_video").removeClass("video--active");
+            
+            // Stop playing completely by destroying iframe on close
+            if (window.youtubePlayer && typeof window.youtubePlayer.destroy === 'function') {
+                try { window.youtubePlayer.destroy(); } catch(e) {}
+            }
+        });
+    }, 500);
+});
+</script>

@@ -7458,26 +7458,64 @@ footer {
   display: inline-block;
 }
 
-/* Dealership Video Modal Overrides */
-#dealership_video.modal {
-    max-width: 800px;
-    width: 90%;
-    height: 450px;
-    padding: 0;
+/* Dealership Video Native UI Dialog */
+#dealership_video.video {
+    background: rgba(0, 0, 0, 0.85) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+}
+#dealership_video.video .dealership_video__wrapper {
+    width: 80% !important;
+    max-width: 900px !important;
+    height: 506px !important;
+    position: relative;
+}
+#dealership_video.video .dealership_video__placeholder,
+#dealership_video.video iframe {
+    width: 100% !important;
+    height: 100% !important;
     background: #000;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    border-radius: 8px;
 }
-#dealership_video.modal .dealership_video__placeholder {
-    width: 100%;
-    height: 100%;
+#dealership_video.video #dealership_video_stop {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10000;
+    background: #444;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.2s ease;
+    font-family: 'FontAwesome';
 }
-#dealership_video.modal #dealership_video_stop {
-    display: none !important; /* Hide old custom close button */
+#dealership_video.video #dealership_video_stop:hover {
+    background: #e74c3c;
+    transform: scale(1.1);
 }
-
-/* Make sure the iframe itself is responsive and full size */
-#dealership_video.modal iframe {
-    width: 100%;
-    height: 100%;
+@media (max-width: 900px) {
+    #dealership_video.video .dealership_video__wrapper {
+        width: 90% !important;
+        height: 50.625vw !important; /* 16:9 ratio for 90% width */
+    }
+    #dealership_video.video #dealership_video_stop {
+        top: -15px;
+        right: -15px;
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
 }
 
 /* Make dealership video play buttons match hero button UI */
