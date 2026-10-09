@@ -5263,33 +5263,32 @@ a:hover {
   clear: both;
 }
 
+.videos__video_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .videos__video {
-  width: 300px;
-  height: 380px;
-  float: left;
-  display: inline-block;
+  width: 31% !important;
+  height: auto !important;
+  float: none !important;
   position: relative;
-  margin-right: 100px;
-  margin-bottom: 80px;
+  margin-right: 0 !important;
+  margin-bottom: 60px !important;
   text-align: left;
 }
 
 @media only screen and (max-width: 940px) {
   .videos__video {
-    margin: 0 auto 80px;
+    width: 100% !important;
+    margin: 0 auto 60px !important;
     display: block;
-    float: none;
-  }
-}
-
-@media only screen and (min-width: 941px) {
-  .videos__video:nth-of-type(3n) {
-    margin-right: 0;
   }
 }
 
 .videos__video:first-of-type {
-  clear: left;
+  clear: none;
 }
 
 .videos__video__title {
@@ -7485,15 +7484,15 @@ footer {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -20px;
-    right: -20px;
-    font-size: 20px;
+    top: -15px;
+    right: -15px;
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
     z-index: 10000;
     background: #444;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: 2px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -7510,11 +7509,11 @@ footer {
         height: 50.625vw !important; /* 16:9 ratio for 90% width */
     }
     #dealership_video.video #dealership_video_stop {
-        top: -15px;
-        right: -15px;
-        width: 34px;
-        height: 34px;
-        font-size: 16px;
+        top: -12px;
+        right: -12px;
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
     }
 }
 
@@ -7539,8 +7538,8 @@ footer {
   /* Positioning: bottom right of the video image */
   position: absolute !important;
   top: auto !important;
-  bottom: 145px !important;
-  right: 15px !important;
+  bottom: 10px !important;
+  right: 10px !important;
   left: auto !important;
   transform: none !important;
   opacity: 1 !important;

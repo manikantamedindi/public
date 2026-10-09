@@ -7,9 +7,11 @@
         {% for item in videos__video %}
             {% set img = TimberImage(item.img) %}
             <div class="videos__video">
-                <img class="videos__video__img" src="{{ img.src }}" alt=""/>
+                <div class="videos__video__thumb" style="position: relative; line-height: 0;">
+                    <img class="videos__video__img" src="{{ img.src }}" alt="" style="width: 100%; display: block;" />
+                    <a class="videos__video__button" data-youtube-id="{{ item.youtube_id }}"></a>
+                </div>
                 <h3 class="videos__video__title">{{ item.title }}</h3>
-                <a class="videos__video__button" data-youtube-id="{{ item.youtube_id }}"></a>
             </div>
         {% endfor %}
       </div>
