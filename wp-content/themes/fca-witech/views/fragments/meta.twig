@@ -14,9 +14,47 @@
   <script src="{{ site.url }}/wp-content/themes/fca-witech/script.js"></script>
   <!--<script src="{{ site.url }}/wp-content/themes/fca-witech/fonts.compiled.js"></script></-->
   <!--<script>try{Typekit.load({ async: true });}catch(e){}</script></-->
-  <script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="{{ site.url }}/wp-content/themes/fca-witech/bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="{{ site.url }}/wp-content/themes/fca-witech/bower_components/jquery-modal/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    $(document).ready(function() {
+      // Small timeout to let Vimeo script initialize
+      setTimeout(function() {
+        if ($('#hero-inline-video').length) {
+          var player = new Vimeo.Player($('#hero-inline-video')[0]);
+          var isPlaying = false; 
+
+          var $btn = $('#hero-video-start');
+          // Start in loading state
+          $btn.addClass('is-loading');
+
+          // When video actually starts playing, remove loading and set to pause icon
+          player.on('play', function() {
+            $btn.removeClass('is-loading').addClass('is-playing');
+            isPlaying = true;
+          });
+
+          // When video pauses, change icon to play
+          player.on('pause', function() {
+            $btn.removeClass('is-loading is-playing');
+            isPlaying = false;
+          });
+
+          $btn.off('click').on('click', function(e) {
+            e.preventDefault();
+            if ($btn.hasClass('is-loading')) return; // do nothing if still loading
+
+            if (isPlaying) {
+              player.pause();
+            } else {
+              player.play();
+            }
+          });
+        }
+      }, 100);
+    });
+  </script>
   <link rel="stylesheet" href="{{ site.url }}/wp-content/themes/fca-witech/bower_components/jquery-modal/jquery.modal.css" type="text/css" media="screen" />
 
 

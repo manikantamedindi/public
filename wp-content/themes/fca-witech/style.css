@@ -7394,3 +7394,66 @@ footer {
     margin-top: 50px;
   }
 }
+.hero {
+  min-height: 80vh;
+}
+.register-modal {
+  display: none !important;
+}
+
+/* Modern Play/Pause Button UI */
+.hero__button {
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
+  color: #FFFFFF !important;
+  width: 64px !important;
+  height: 64px !important;
+  line-height: 60px !important;
+  border-radius: 50% !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.hero__button:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: scale(1.05) !important;
+  border-color: #FFFFFF !important;
+}
+
+.hero__button:after {
+  content: "\f04b" !important;
+  font-family: 'FontAwesome' !important;
+  font-size: 24px !important;
+  position: static !important;
+  margin-left: 4px !important; /* Visual center for play icon */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* When playing, show pause icon */
+.hero__button.is-playing:after {
+  content: "\f04c" !important;
+  margin-left: 0 !important; /* Pause icon is symmetric */
+}
+
+.hero__play {
+  margin: 0 !important;
+  width: auto !important;
+}
+
+@keyframes fa-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+/* When loading, show spinning icon */
+.hero__button.is-loading:after {
+  content: "\f110" !important;
+  margin-left: 0 !important;
+  animation: fa-spin 2s infinite linear;
+  display: inline-block;
+}

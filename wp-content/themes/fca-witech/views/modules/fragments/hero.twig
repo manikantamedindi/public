@@ -1,7 +1,8 @@
 {% set img = TimberImage(post.get_field('hero__image')) %}
-<div class="hero" style="background-image: url('{{ img.src }}');">
+<div class="hero" style="background-image: url('{{ img.src }}'); position: relative; overflow: hidden;">
+    <iframe id="hero-inline-video" src="https://player.vimeo.com/video/166526181?background=1&autoplay=1&loop=1&muted=1" style="position: absolute; top: 50%; left: 50%; width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; transform: translate(-50%, -50%); z-index: 0; pointer-events: none;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 	{% include 'fragments/header.twig' %}
-	<div class="wrapper">
+	<div class="wrapper" style="position: relative; z-index: 2;">
 		{% set hero__text = post.get_field('hero__text') %}
 		{% set hero__video = post.get_field('hero__video') %}
 		{% if hero__text %}
@@ -17,11 +18,11 @@
 					<div class="{{ class }}">{{ item.content }}</div>
 				{% endfor %}
 			</div>
-			{% if hero__video %}
-				<div class="hero__play">
-					<a class="hero__button" id="hero-video-start" href="#"></a>
-				</div>
-			{% endif %}
 		{% endif %}
 	</div>
+	{% if hero__video %}
+		<div class="hero__play" style="position: absolute; bottom: 30px; right: 30px; z-index: 10;">
+			<a class="hero__button" id="hero-video-start" href="#"></a>
+		</div>
+	{% endif %}
 </div>
