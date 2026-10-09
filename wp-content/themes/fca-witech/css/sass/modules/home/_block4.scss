@@ -1,0 +1,76 @@
+.block4 {
+	margin: auto;
+	width: 60%;
+	padding: 60px 20px;
+	text-align: center;
+	@include breakpoint(tablet-down) {
+		font-size: 25px;
+	}
+	@include breakpoint(handheld) {
+		width: 100%;
+	}
+}
+
+.title4 {
+	@include font('semi-bold');
+	width: 100%;
+	text-align: center;
+	color: $mopar-blue;
+	font-size: 32px;
+	margin-top: 50px;
+	padding-left: 0;
+	padding-right: 0;
+	line-height: 40px;
+	@include breakpoint(tablet-down) {
+		font-size: 31px;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		margin-top: 0;
+	}
+	@include breakpoint(handheld) {
+		line-height: 32px;
+		font-size: 23px;
+	}
+}
+
+.content4 {
+	margin-top:40px;
+	width: 100%;
+	text-align: center;
+	font-size: 32px;
+	line-height: 46px;
+	@include breakpoint(tablet-down) {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		font-size: 25px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	@include breakpoint(handheld) {
+		font-size: 16px;
+	}
+}
+
+.smallcontent4 {
+	margin-top: 40px;
+	width: 100%;
+	text-align: center;
+	font-size: 22px;
+	line-height: 36px;
+	@include breakpoint(tablet-down) {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		padding-left: 5px;
+		padding-right: 5px;
+		font-size: 16px;
+	}
+	@include breakpoint(handheld) {
+		font-size: 14px;
+		line-height: 24px;
+	}
+}

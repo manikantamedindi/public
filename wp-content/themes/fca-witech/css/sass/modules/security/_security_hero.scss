@@ -1,0 +1,19 @@
+//
+// Modules / Hero
+// --------------------------------------------------
+.security_page{
+	.hero{
+		&__content{
+			margin-bottom:75px;
+
+			&__text{
+				&-large{
+					@include breakpoint(tablet-down){
+						font-size:40px;
+						line-height:46px;						
+					}
+				}
+			}
+		}
+	}
+}

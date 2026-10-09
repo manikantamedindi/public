@@ -1,0 +1,15 @@
+.security__divider {
+	max-height: 600px;
+	width: 100%;
+	height: 400px;
+	background-size: cover;
+	background-image: 100% 100%;
+	@include breakpoint(tablet-down) {
+		max-height: 200px;
+		width: 100%;
+	}
+	@include breakpoint(handheld) {
+		max-height: 150px;
+		width: 100%;
+	}
+}

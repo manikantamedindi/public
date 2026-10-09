@@ -1,0 +1,84 @@
+//
+// Modules / Hero
+// --------------------------------------------------
+.hero {
+  background-color: $dark-gray;
+  background-position: center;
+  background-size: cover;
+
+  &__content {
+    color: $white;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 36px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+
+    &-large {
+      @include font('light');
+      font-size: 45px;
+      line-height: 1;
+      margin: 0 auto 50px auto;
+    }
+
+    &-play {
+      @include transition( background 0.25s );
+      background: darken($blue, 10%);
+      color: $white;
+      border-radius: 100px;
+      display: inline-block;
+      height: 100px;
+      line-height: 100px;
+      margin-top: 50px;
+      width: 100px;
+
+      &:after {
+        content: '';
+        font-family: 'font-awesome';
+        font-size: 36px;
+        position: relative;
+        left: 4px;
+      }
+
+      &:hover {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 50px 20px;
+  }
+
+  @media screen and (min-width: 640px) {
+    &__content {
+      &-large {
+        font-size: 65px;
+        margin-top: 50px;
+      }
+    }
+
+    .wrapper {
+      padding-bottom: 100px;
+    }
+  }
+
+  @include desktop {
+    height: 100%;
+    min-height: 400px;
+
+    &__content {
+      @include transform( translateY(-50%) );
+      position: absolute;
+      top: calc(50% - 60px);
+      width: 100%;
+    }
+
+    .wrapper {
+      height: 100%;
+      padding: 0;
+    }
+  }
+}

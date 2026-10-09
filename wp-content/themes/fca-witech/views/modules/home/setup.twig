@@ -1,0 +1,22 @@
+<section class="setup" id="setup">
+	<div class="wrapper">
+		<div class="top_wrapper">
+			<h2 class="setup__title">{{ post.get_field('setup_title') }}</h2>
+			<span class="setup__description">{{ post.get_field('setup__description') }}</span>
+		</div>
+		{% for section in post.get_field('setup_sections') %}
+			<article class="setup__third">
+				<h3 class="setup__third__title">{{ section.title }}</h3>
+				<div class="setup__third__description">{{ section.description }}</div>
+				{% if section.documents %}
+					<ul class="setup__third__documents">
+						{% for document in section.documents %}
+							<li><a href="{{ document.file }}" target="_blank">{{ document.title }}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</article>
+		{% endfor %}
+
+	</div>
+</section>

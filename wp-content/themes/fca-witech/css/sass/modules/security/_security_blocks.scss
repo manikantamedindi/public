@@ -1,0 +1,111 @@
+.security_block3 {
+	margin: 75px auto;
+	max-width: 1000px;
+	text-align: center;
+
+	padding: 0 25px;
+
+	@include breakpoint(tablet-down) {
+		font-size: 25px;
+	}
+	@include breakpoint(handheld) {}
+
+	.content {
+		margin: auto;
+		text-align: center;
+		font-size: 30px;
+		line-height: 36px;
+		@include breakpoint(tablet-down) {
+			margin-left: 10px;
+			margin-right: 10px;
+			font-size: 25px;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+}
+
+.security_block {
+
+	padding: 0 25px;
+	margin: 75px auto;
+	max-width: 800px;
+	text-align: center;
+	@include breakpoint(tablet-down) {
+		font-size: 25px;
+	}
+
+	.title {
+		@include font( 'semi-bold');
+		text-align: center;
+		color: $mopar-blue;
+		font-size: 40px;
+		margin-bottom: 75px;
+		@include breakpoint(tablet-down) {
+			font-size: 34px;
+		}
+	}
+
+	.content {
+		@include font( 'normal');
+		text-align: center;
+		font-size: 26px;
+		line-height: 34px;
+		@include breakpoint(tablet-down) {
+			font-size: 25px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+
+		&__emph {
+			display: inline;
+			color: $mopar-blue;
+		}
+
+		&__bold {
+			margin-top: 50px;
+			@include font( 'bold');
+		}
+	}
+}
+
+.security_block1 {
+	padding: 0 25px;
+	margin: 75px auto;
+	max-width: 800px;
+	text-align: center;
+	@include breakpoint(tablet-down) {
+		font-size: 25px;
+	}
+
+	.title {
+		@include font( 'semi-bold');
+		text-align: center;
+		color: $mopar-blue;
+		font-size: 40px;
+		margin-bottom: 75px;
+		@include breakpoint(tablet-down) {
+			font-size: 34px;
+		}
+	}
+
+	.content {
+		@include font( 'normal');
+		text-align: center;
+		font-size: 26px;
+		line-height: 34px;
+		@include breakpoint(tablet-down) {
+			font-size: 25px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 20px;
+			line-height: 28px;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+{# views / base template #}
+
+{% include 'fragments/meta.twig' %}
+<body class="{% block body_classes %}{% endblock %}">
+  {% block content %}
+  {% endblock %}
+  {{ function('wp_footer') }}
+  {{ options.google_analytics }}
+  {% include 'modules/fragments/footer.twig' %}
+  {% block footer_scripts %}
+  {% endblock %}
+</body>
+</html>

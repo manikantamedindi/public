@@ -1,0 +1,235 @@
+.slider {
+	min-height: 1040px;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+	@include breakpoint(handheld) {
+		min-height: auto;
+	}
+
+	.content {
+		margin: 100px auto 100px;
+		max-width: 900px;
+		padding: 0;
+		@include breakpoint(handheld){
+			margin: 100px auto 25px;
+		}
+	}
+
+	.sliderheader {
+		color: $mopar-blue;
+		font-size: 40px;
+		line-height: 51px;
+		@include font('semi-bold');
+		margin-bottom:50px;
+		@include breakpoint(handheld) {
+			font-size: 30px;
+			margin-bottom: 0px;
+		}
+	}
+
+	.sliderinfo {
+		font-size: 24px;
+		line-height: 35px;
+		margin: 0 auto;
+		@include breakpoint(tablet-down) {
+			font-size: 18px;
+			padding: 45px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	.sliderinfosmall {
+		font-size: 15px;
+		padding: 40px 40px 50px;
+		color: #ccc;
+		@include breakpoint(tablet-down) {
+			font-size: 12px;
+			padding: 50px;
+			line-height: 15px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 9px;
+			padding: 35px;
+		}
+	}
+
+	input {
+		cursor: pointer;
+		position: relative;
+		margin: 35px 0;
+		visibility: hidden;
+		display: none;
+	}
+
+	input[type=radio] {
+		&:checked ~ .content {
+			visibility:hidden;
+			display: none;
+		}
+
+		&:nth-of-type(1):checked ~ .content:nth-of-type(1) {
+			visibility:visible;
+			display: block;
+
+			> * {
+				opacity: 1;
+			}
+		}
+
+		&:nth-of-type(2):checked ~ .content:nth-of-type(2) {
+			visibility:visible;
+			display: block;
+
+			> * {
+				opacity: 1;
+			}
+		}
+
+		&:nth-of-type(3):checked ~ .content:nth-of-type(3) {
+			visibility:visible;
+			display: block;
+
+			> * {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.icon1 {
+	background-image: url("./img/tablet.png");
+	filter: grayscale(100%) opacity(50%);
+}
+
+.icon2 {
+	background-image: url("./img/hotspot.png");
+	filter: grayscale(100%) opacity(50%);
+}
+
+.icon3 {
+	background-image: url("./img/mobile.png");
+	filter: grayscale(100%) opacity(50%);
+}
+
+.icon-cc {
+	margin: 10px 40px;
+	cursor: pointer;
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 250px;
+	height: 255px;
+	transition: all 100ms ease-in;
+	@include breakpoint(tablet-down) {
+		width: 100px;
+		height: 100px;
+		vertical-align: top;
+	}
+	@include breakpoint(handheld) {
+		width: 80px;
+		height: 80px;
+		margin:10px 10px;
+	}
+}
+
+.cc-selector {
+	input {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 40px;
+
+		&:active + .icon-cc {
+			border: solid 5px black;
+			border-radius: 100%;
+			opacity: 1;
+		}
+
+		&:checked + .icon-cc {
+			border: dotted 5px $gray;
+			border-radius: 50%;
+			filter: none;
+			color: $mopar-blue;
+		}
+	}
+
+	label{
+		span{
+			display: block;
+			@include font('semi-bold');
+			font-size: 25px;
+			max-width: 200px;
+			margin: 300px auto 0;
+
+			@include breakpoint(tablet-down){
+				text-align: center;
+				margin: 125px auto 0;
+				font-size: 20px;
+				vertical-align: top;
+			}
+
+			@include breakpoint(handheld){
+				margin: 100px auto 0;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+
+.slidertitle {
+	color: $dark-gray;
+	text-align: center;
+}
+
+.mobilitytitle {
+	color: black;
+	text-align: center;
+}
+
+.mobilitytitlegrid {
+	display: flex;
+	margin: 0 350px;
+	@include breakpoint(tablet-down) {
+		margin: 0;
+	}
+	@include breakpoint(handheld) {}
+}
+
+.mobilitytitlecol {
+	padding: 30px;
+}
+
+.mobilitytitlefluid-flex {
+	flex: 1;
+}
+
+.mobility{
+	.title{
+		font-size:40px;
+		line-height: 51px;
+		@include font('semi-bold');
+		margin: 50px auto;
+		max-width: 500px;
+		color:$mopar-blue;
+		text-align: center;
+
+		@include breakpoint(handheld){
+			text-align: center;
+			font-size:30px;
+			line-height: 33px;
+			padding: 0 50px;
+		}
+	}
+	.bigbanner{
+		height:500px;
+		padding: 0px 50px;
+
+		@include breakpoint(handheld){
+			height:200px;
+		}
+	}
+}

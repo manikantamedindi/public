@@ -1,0 +1,58 @@
+.infosecurity {
+	background-color: #EFEFEF;
+	padding-bottom: 50px;
+}
+
+#pagewrapsecurity{
+	text-align: center;
+}
+
+.titlesecurityinfo {
+	padding-top:50px;
+	color: black;
+	font-size: 40px;
+	text-align: center;
+	@include font('semi-bold');
+
+	@include breakpoint(handheld){
+		font-size:30px;
+		padding:50px 50px 25px;
+	}
+}
+
+.recommendation {
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	max-width: 250px;
+	margin: 0 50px;
+
+	@include breakpoint(handheld){
+		width:100%;
+	}
+
+	.securityinfo1 {
+		font-size: 19px;
+		line-height: 22px;
+		text-align: center;
+		@include breakpoint(tablet-down) {
+			font-size: 17px;
+		}
+
+		a{
+			text-decoration: none;
+			@include font('bold');
+			color:$mopar-blue;
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.securitytitle1 {
+		font-size: 72px;
+		color: $mopar-blue;
+		text-align: center;
+	}
+}

@@ -1,0 +1,43 @@
+.bottomnav2 {
+	padding: 100px 0;
+	background-size: cover;
+
+	h3 {
+		@include font( 'normal');
+		text-align: center;
+		max-width: 900px;
+		margin: 0 auto;
+		color: white;
+		font-size:30px;
+		line-height: 36px;
+		@include breakpoint(tablet-down){
+			padding: 0px 50px;
+		}
+	}
+
+	h4 {
+		padding-top: 50px;
+		text-align: center;
+		font-size:24px;
+		line-height: 28px;
+		max-width: 900px;
+		margin: 0 auto;
+		color: white;
+		@include font( 'bold');
+		@include breakpoint(tablet-down){
+			padding: 50px 50px 0px;
+		}
+	}
+	.bottomnav__button_group{
+		margin-top:40px;
+		a.btn {
+			text-decoration: none;
+			@include font('semi-bold');
+			padding: 5px 50px;
+			color: white;
+			background-color: $mopar-blue;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+		}
+	}
+}

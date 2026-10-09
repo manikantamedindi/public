@@ -1,0 +1,20 @@
+.aftermarket {
+	.bigbanner {
+		h2 {
+			font-size: 32px;
+			line-height: 1.5em;
+			padding-top: 25px;
+			@include breakpoint(tablet-down) {
+				font-size: 19px;
+				padding-top: 10px;
+			}
+			@include breakpoint(handheld) {
+				font-size: 15px;
+			}
+
+			p {
+				padding-bottom: 20px;
+			}
+		}
+	}
+}

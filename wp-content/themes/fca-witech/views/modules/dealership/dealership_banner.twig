@@ -1,0 +1,12 @@
+ <!--
+ <div class="bgimg2" style="background-image: url('{{ theme.link }}/img/background/fcadealershipbg2.png');">
+      <div class="title5">With three simple steps,<br>start servicing vehicles more efficiently</div>
+  </div>
+-->
+
+ {% set img = TimberImage(post.get_field('banner__image')) %}
+<div class="dealership_banner" style="background-image: url('{{ img.src }}');">
+	<div class="dealership_banner__content">
+		<h2>{{ post.get_field('banner__text') }}</h2>
+	</div>
+</div>

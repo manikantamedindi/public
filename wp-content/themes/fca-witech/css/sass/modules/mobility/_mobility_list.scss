@@ -1,0 +1,121 @@
+.info {
+	font-size: 100%;
+	margin: 25px auto;
+	max-width: 940px;
+
+	.header {
+		text-align: center;
+		color: #0066cc;
+		font-size: 66px;
+		font-weight: 900;
+		@include breakpoint(tablet-down) {
+			font-size: 26px;
+			padding: 10px;
+		}
+	}
+
+	.wrapper {
+		.leftcontent {
+			width: 50%;
+			float: left;
+			text-align: left;
+			color: black;
+			font-size: 14px;
+			font-weight: 200;
+			line-height: 25px;
+
+			p {
+				margin: auto;
+				width: 90%;
+				padding: 20px;
+				text-align: center;
+				font-size: 14px;
+				text-align: left;
+			}
+			@include breakpoint(tablet-down) {
+				width: 100%;
+				float: none;
+				padding: 10px;
+				font-size: 12px;
+			}
+
+			.card {
+				background-color: #EBEBEB;
+				border-left: solid 10px #0066cc;
+				margin: 10px 55px 10px 0;
+				padding: 20px 1px 15px 15px;
+			}
+		}
+
+		.righttable {
+			height: 100px;
+			width: 50%;
+			float: right;
+			@include breakpoint(tablet-down) {
+				width: 100%;
+				float: none;
+				padding: 10px;
+			}
+		}
+
+		div.table-title {
+			display: block;
+			margin: auto;
+			max-width: 600px;
+			padding: 5px;
+			width: 100%;
+			float: left;
+		}
+
+		.table-fill {
+			border-collapse: collapse;
+			width: 100%;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+			animation: float 5s infinite;
+		}
+
+		th {
+			color: white;
+			background: #0066cc;
+			font-size: 13px;
+			font-weight: 900;
+			padding: 24px;
+			text-align: left;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+			vertical-align: middle;
+		}
+
+		tr {
+			color: #666B85;
+			font-size: 16px;
+			font-weight: normal;
+			text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+
+			&:nth-child(odd) {
+				td {
+					background: #EBEBEB;
+				}
+			}
+		}
+
+		td {
+			background: #FFFFFF;
+			padding: 20px;
+			text-align: left;
+			vertical-align: middle;
+			font-size: 13px;
+			text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+			border-right: 1px solid #C1C3D1;
+			color: #0066cc;
+			font-weight: 800;
+		}
+
+		th.text-left {
+			text-align: center;
+		}
+
+		td.text-left {
+			text-align: center;
+		}
+	}
+}

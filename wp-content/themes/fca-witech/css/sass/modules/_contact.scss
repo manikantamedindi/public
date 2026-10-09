@@ -1,0 +1,127 @@
+//
+// Modules / Contact
+// --------------------------------------------------
+
+.contact {
+	background: #EBEBEB;
+	padding: 50px 20px;
+
+	.gform_confirmation_message,
+	.gform_description,
+	.validation_error {
+		box-sizing: border-box;
+		display: block;
+		font-size: 19px;
+		line-height: 30px;
+		margin: auto;
+		max-width: 420px;
+		padding: 0 20px;
+	}
+
+	.gform_validation_container {
+		display: none;
+	}
+
+	.validation_error {
+		margin-top: 30px;
+	}
+
+	.validation_message {
+		margin-bottom: 30px;
+	}
+
+	.gform_body {
+		margin: 50px auto;
+		max-width: 450px;
+	}
+
+	.gform_fields {
+		list-style: none;
+	}
+
+	.gfield_label {
+		display: none;
+	}
+
+	input[type="email"],
+	input[type="text"] {
+		@include font;
+		box-sizing: border-box;
+		border: 1px solid $gray;
+		color: $black;
+		display: block;
+		font-size: 16px;
+		height: 50px;
+		line-height: 50px;
+		margin-bottom: 10px;
+		padding: 0 20px;
+		width: 100%;
+	}
+
+	textarea {
+		@include font;
+		box-sizing: border-box;
+		border: 1px solid $gray;
+		color: $black;
+		display: block;
+		font-size: 16px;
+		height: 200px;
+		line-height: 25px;
+		margin-bottom: 10px;
+		max-width: 450px;
+		padding: 12px 20px;
+		width: 100%;
+	}
+
+	.gform_button {
+		@include font;
+		@include transition( 0.25s background );
+		background: $blue-dark;
+		box-sizing: border-box;
+		color: $white;
+		display: block;
+		font-size: 20px;
+		height: 50px;
+		line-height: 50px;
+		margin: 30px auto 0;
+		max-width: 220px;
+		text-transform: uppercase;
+		width: 100%;
+
+		&:hover {
+			background: $blue-medium;
+			cursor: pointer;
+		}
+	}
+
+	.gform_title {
+		@include font( 'light');
+		font-size: 45px;
+		margin: 0 auto 20px;
+		max-width: 780px;
+		text-align: center;
+	}
+	@media screen and (min-width: 440px) {
+		.gform_confirmation_message,
+		.gform_description,
+		.validation_error {
+			text-align: center;
+		}
+
+		.validation_message {
+			margin-top: -10px;
+		}
+
+		input[type="email"],
+		input[type="text"],
+		textarea {
+			margin-bottom: 20px;
+		}
+	}
+	@include breakpoint("desktop") {
+		.gform_title {
+			font-size: 65px;
+			margin-top: 50px;
+		}
+	}
+}

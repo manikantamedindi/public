@@ -1,0 +1,9 @@
+{% set img = TimberImage(post.get_field('banner__image')) %}
+<div class="banner" style="background-image: url('{{ img.src }}');">
+    <div class="banner__container">
+        <div class="banner__container__quotebox">
+            <h1>{{ post.get_field('banner__content') }}</h1>
+            <h5>{{ post.get_field('banner__subtext') }}</h5>
+        </div>
+    </div>
+</div>

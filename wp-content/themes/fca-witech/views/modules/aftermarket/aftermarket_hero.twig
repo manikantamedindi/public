@@ -1,0 +1,14 @@
+{% set img = TimberImage(post.get_field('hero__image')) %}
+<div class="hero" style="background-image: url('{{ img.src }}');">
+	{% include 'fragments/header.twig' %}
+	<div class="wrapper">
+		{% set hero__text = post.get_field('hero__text') %}
+		{% if hero__text %}
+			<div class="aftermarket_hero__content">
+				{% for item in hero__text %}
+					<div{% if item.format == 'large' %} class="aftermarket_hero__content-large"{% endif %}>{{ item.content }}</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</div>

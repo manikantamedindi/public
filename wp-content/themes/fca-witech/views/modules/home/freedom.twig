@@ -1,0 +1,15 @@
+<div class='freedom'>
+   <div class='freedom__bigtitle'>
+      {{ post.get_field('freedom__bigtitle') }}
+   </div>
+   <div class='freedom__content'>
+      <div class="freedom__content__main">{{ post.get_field('freedom__big-content') }}</div>
+
+      {% set subcontent = post.get_field('content') %}
+
+      {% for content in subcontent %}
+        <div class="freedom__content__subtitle">{{ content.title }}</div>
+        <div class="freedom__content__subcontent">{{ content.content }}</div>
+      {% endfor %}
+   </div>
+</div>

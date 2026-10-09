@@ -1,0 +1,148 @@
+//
+// Modules / Setup
+// --------------------------------------------------
+
+.setup {
+	background: $white;
+	color: $black;
+	padding: 50px 20px;
+	margin-left: 50px;
+	margin-right: 50px;
+	display: inline-block;
+	//top text
+	.top_wrapper {
+		width: 100%;
+		display: inline-block;
+		clear: both;
+		padding-bottom: 150px;
+		@include breakpoint(tablet-down) {
+			padding-bottom: 50px;
+		}
+	}
+	//done
+	&__third {
+		margin-left: 10px;
+
+		&__description {
+			font-size: 18px;
+			line-height: 24px;
+			margin-bottom: 20px;
+			margin-left: 10px;
+			@include font( 'light');
+			@include breakpoint(tablet-down) {
+				font-size: 20px;
+			}
+			@include breakpoint(handheld) {
+				font-size: 15px;
+			}
+		}
+
+		&__documents {
+			font-size: 14px;
+			line-height: 24px;
+			list-style: none;
+
+			li {
+				margin-top: 6px;
+
+				&:first-child {
+					margin-top: 0;
+				}
+
+				a {
+					&:before {
+						//content: '';
+						display: inline-block;
+						font-family: 'FontAwesome';
+						font-size: 16px;
+						padding-right: 10px;
+					}
+				}
+			}
+			@include breakpoint(desktop) {
+				margin-bottom: 50px;
+			}
+		}
+
+		&__title {
+			@include font( 'light');
+			display: block;
+			font-size: 27px;
+			line-height: 30px;
+			margin-bottom: 20px;
+			margin-left: 10px;
+			@include breakpoint(tablet-down) {
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			@include breakpoint(handheld) {
+				font-size: 15px;
+			}
+		}
+		@include breakpoint(desktop) {
+			box-sizing: border-box;
+			float: left;
+			margin: 0;
+			padding: 0 20px;
+			width: 33%;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	&__title {
+		@include font( 'light');
+		margin-bottom: 50px;
+		border-bottom: 2px solid $blue-2;
+		padding-bottom: 10px;
+		float: left;
+		color: $blue-gray-2;
+		line-height: 48px;
+		display: inline-block;
+		font-size: 40px;
+		@include breakpoint(desktop) {
+			margin-left: 20px;
+			margin-top: 50px;
+		}
+		@include breakpoint(tablet-down) {
+			font-size: 30px;
+			line-height: 36px;
+			clear: none;
+		}
+		@include breakpoint(handheld) {
+			font-size: 19px;
+			line-height: 23px;
+		}
+	}
+
+	a {
+		color: $white;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__description {
+		float: left;
+		width: 40%;
+		font-size: 25px;
+		line-height: 40px;
+		margin-left: 150px;
+		margin-top: 100px;
+		@include font( 'light');
+		@include breakpoint(tablet-down) {
+			font-size: 20px;
+			margin-top: 0;
+			margin-left: 0;
+			width: 80%;
+		}
+		@include breakpoint(handheld) {
+			font-size: 15px;
+			line-height: 25px;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+ <!--
+  <div class="bigbanner" style="background-image: url('{{ theme.link }}/img/background/fcadealershipbg.png');">
+    <div class="title6">REMINDER:</div>
+    <div class="container8">
+      <h4>FCA requires each dealership to<br>have a minimum of three microPods<br>for vehicle diagnostics, including at<br>least one dedicated device for wiTECH 1.0.</h4>
+    </div>
+    <div class="container9">
+      <h6>* The ideal number of diagnostic solutions within<br>a dealership is one for every technician.</h6>
+    </div>
+  </div>
+
+	bigbanner__image
+
+	bigbanner__text
+
+		format
+		content
+
+
+
+ -->
+
+{% set img = TimberImage(post.get_field('bigbanner__image')) %}
+<div class="bigbannerdealership" style="background-image: url('{{ img.src }}');">
+	<div class="wrapper">
+		<div class="bigbanner__content">
+      {% if post.get_field('bigbanner__title') %}
+			   <h1>{{ post.get_field('bigbanner__title') }}</h1>
+      {% endif %}
+      <h2>{{ post.get_field('bigbanner__content') }}</h2>
+      {% if post.get_field('bigbanner__subtext') %}
+			   <h4>{{ post.get_field('bigbanner__subtext') }}</h4>
+      {% endif %}
+		</div>
+	</div>
+</div>

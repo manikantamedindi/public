@@ -1,0 +1,13 @@
+.bigbanner {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	@include breakpoint(tablet-down) {
+		height: 500px;
+	}
+	@include breakpoint(handheld) {
+		height: 400px;
+	}
+}

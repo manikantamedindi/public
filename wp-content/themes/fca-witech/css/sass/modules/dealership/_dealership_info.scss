@@ -1,0 +1,171 @@
+.dealershipbodyfirst {
+	color: #fff;
+	margin-bottom: 35px;
+	@include breakpoint(tablet-down) {
+	}
+	@include breakpoint(handheld) {
+	}
+}
+
+#pagewrapdealership {
+	padding: 5px;
+}
+
+.securitytitle1 {
+	margin-top: 75px;
+	text-align: center;
+	margin-bottom: 65px;
+	color: $mopar-blue;
+
+	@include breakpoint(handheld) {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+	.titledoc {
+		font-size: 40px;
+		line-height: 46px;
+		color: $mopar-blue;
+		@include font('semi-bold');
+
+		@include breakpoint(handheld){
+			font-size:30px;
+			line-height: 36px;
+		}
+	}
+}
+
+.securitytitle2 {
+	margin-top: 100px;
+	text-align: center;
+	margin-bottom: 75px;
+	color: $mopar-blue;
+	@include breakpoint(handheld) {
+		margin: 50px 20px 50px;
+	}
+
+	.titledoc {
+		margin: 0 auto;
+		max-width:700px;
+		font-size: 35px;
+		line-height: 42px;
+		color: $mopar-blue;
+		@include font('semi-bold');
+
+		@include breakpoint(handheld){
+			font-size:30px;
+			line-height: 36px;
+		}
+
+	}
+}
+
+.realdocuments{
+	text-align: center;
+	margin-bottom: 50px;
+
+	.document{
+		width: 25%;
+		max-width: 450px;
+		padding: 5px 15px;
+		margin: 5px 30px;
+		margin-bottom: 5px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+
+		@include breakpoint(handheld){
+			width:100%;
+			margin: 0 0 5px;
+		}
+
+		.title_content_header_dealership {
+			font-size: 26px;
+			text-align: center;
+			color: $mopar-blue;
+			margin-bottom: 20px;
+			i{
+				font-size: 54px;
+				margin: 25px;
+			}
+		}
+
+		.title_content_info_dealership {
+			max-width: 300px;
+			margin: 0 auto;
+			font-size: 18px;
+			text-align: center;
+			color: black;
+			line-height: 22px;
+		}
+
+		.title_content {
+			font-size: 42px;
+			font-weight: 700;
+			color: $mopar-blue;
+			text-align: center;
+			margin-bottom: 25px;
+		}
+
+	}
+}
+
+.fakedocuments{
+	text-align: center;
+	margin-bottom:100px;
+
+	.document{
+		width: 25%;
+		max-width: 450px;
+		padding: 5px 15px;
+		margin: 5px 30px;
+		margin-bottom: 5px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
+
+		@include breakpoint(handheld){
+			width:100%;
+			margin: 0 0 5px;
+		}
+
+
+		.title_content_header_dealership1 {
+			font-size: 20px;
+			line-height: 26px;
+			text-align: center;
+			color: $mopar-blue;
+			max-width: 250px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+			padding: 0 20px;
+
+			i{
+				font-size: 56px;
+				margin: 25px;
+			}
+		}
+
+		.title_content_info {
+			font-size: 14px;
+			text-align: center;
+			color: black;
+		}
+
+		.title_content_dealership1 {
+			font-size: 70px;
+			color: #9B9B9B;
+			text-align: center;
+			margin-bottom: 25px;
+			@include font('semi-bold');
+
+			font {
+				font-size: 30px;
+				line-height:36px;
+				display: inline-block;
+				padding-top:25px;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,7 @@
+ul.mobility {
+    list-style-type: circle;
+    color: #0066cc;
+    line-height: 45px;
+    font-size: 25px;
+    font-weight: 700;   
+}

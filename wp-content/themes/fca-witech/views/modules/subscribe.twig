@@ -1,0 +1,15 @@
+{% set img = TimberImage(post.get_field('subscribe__background')) %}
+<section class="subscribe" id="subscribe" style="background-image: url('{{ img.src }}');">
+	<h2 class="subscribe__title">{{ post.get_field('subscribe__title') }}</h2>
+	<div class="subscribe__subtitle">{{ post.get_field('subscribe__subtitle') }}</div>
+	<ul class="subscribe__features">
+		{% for feature in post.get_field('subscribe__features') %}
+			<li>{{ feature.title }}</li>
+		{% endfor %}
+	</ul>
+	<form action="{{ mailchimp_url }}" class="subscribe__form" id="mailchimp-form" method="POST">
+		<input class="subscribe__form-email" name="email" placeholder="Email Address" type="email" />
+		<input class="subscribe__form-submit" type="submit" value="Join Us" />
+	</form>
+	<div class="subscribe__success" id="mailchimp-success">Thank you!</div>
+</section>

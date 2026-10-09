@@ -1,0 +1,40 @@
+<!--<div class="container7">
+    <ol>
+      <li><span>1 Map User</span>
+        <h2><a href="http://www.fcawitech.com/wp-content/uploads/2015/10/StepstoAssociatemicroPODs.pdf">Associate microPODs To Service Technicians</a></h2>
+      </li>
+      <li><span>2 Prepare Devices</span>
+        <h2><a href="http://www.fcawitech.com/wp-content/uploads/2016/07/HowtoConfigureamicroPODIIforwiTECH2.pdf">How To Configure A microPod II For wiTECH 2.0</a></h2>
+        <h2><a href="http://www.fcawitech.com/wp-content/uploads/2016/05/HowtoConfigureAWirelessProfile2.pdf">How To Configure A Wireless Profile Or A microPod II</a></h2>
+      </li>
+      <li><span>3 Start Using</span>
+        <h3><a href="https://login.fcawitech.com/main.do">Login in using your DealerCONNECT credentials and you’re ready to begin.</a></h3>
+      </li>
+    </ol>
+  </div>
+</div>-->
+
+
+<div class="steps">
+  {% set steps = post.get_field('steps') %}
+  {% if steps %}
+    <ol>
+      {% for step in steps %}
+        <li class="steps__step">
+          <span class="steps__title">{{ step.title }}</span>
+          {% if step.documents %}
+            <ul class="steps__documents">
+              {% for document in step.documents %}
+                <li>
+                  <span class="{% if document.is_document == true %}document{% endif %}">
+                    <a href="{{ document.link }}">{{ document.title }}</a>
+                  </span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+  {% endif %}
+</div>

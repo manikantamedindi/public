@@ -1,0 +1,212 @@
+/* ************* */
+/* Popup Section */
+/* ************* */
+.register-modal {
+	background: white;
+	bottom: 0;
+	right: 150px;
+	max-width: 335px;
+	overflow-y: hidden;
+	width: 100%;
+	position: fixed;
+	color: white;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	text-align: center;
+	background-color: $mopar-blue;
+	z-index: 9999;
+	overflow-x: visible;
+	@include breakpoint("handheld") {
+		right: 0;
+		max-width: 100%;
+	}
+
+	&__title {
+		color: #333;
+	}
+
+	&__intro {
+		background: white;
+		color: $mopar-blue;
+		//margin: 0 15px 15px;
+		padding-top: 5px;
+		font-size: 10px;
+		//  @include breakpoint("handheld") {
+		margin: 5px;
+		//}
+		&__description {
+			padding-bottom: 20px;
+		}
+	}
+
+	&__img {
+		position: relative;
+
+		i {
+			position: absolute;
+			font-size: 150%;
+			cursor: pointer;
+			color: #555;
+			right: 11px;
+			top: 11px;
+		}
+
+		img {
+			width: 100%;
+			display: none;
+		}
+	}
+
+	&__description {
+		padding-top: 10px;
+		padding-bottom: 15px;
+	}
+
+	&__expand {
+		padding-top: 15px;
+		padding-bottom: 20px;
+
+		&__button {
+			padding: 8px;
+			background: $mopar-blue;
+			cursor: pointer;
+			font-size: 14px;
+			color: white;
+
+			&:hover {
+				background-color: white;
+				border: 1px solid $mopar-blue;
+				color: $mopar-blue;
+			}
+		}
+	}
+}
+/* ************* */
+/* Modal Section */
+/* ************* */
+.jquery-modal {
+	z-index: 9999;
+
+	.mailchimp-modal {
+		min-height: 200px;
+		height: 25%;
+		width: 60%;
+		padding: 0;
+		position: relative;
+		@include font('normal');
+		border: 1px solid #222;
+		border-radius: 0;
+		@include breakpoint("desktop") {
+			min-height: 200px;
+			height: 25%;
+		}
+		@include breakpoint("tablet-down") {
+			height: 50%;
+			min-height: 400px;
+			min-width: 200px;
+		}
+
+		&__mopar_section {
+			float: left;
+			padding: 30px;
+			background: black;
+			@include breakpoint("desktop") {
+				width: 34%;
+				height: 100%;
+			}
+			@include breakpoint("tablet-down") {
+				width: 100%;
+				height: 50%;
+			}
+
+			&__image {
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				background-image: url("./img/MOPAR_293_white.png");
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+
+		form {
+			float: left;
+			display: inline;
+			padding: 15px;
+			font-size: 14px;
+			@include breakpoint("desktop") {
+				width: 66%;
+				height: 100%;
+			}
+			@include breakpoint("tablet-down") {
+				width: 100%;
+				height: 50%;
+			}
+
+			.input {
+				padding-bottom: 20px;
+				float: left;
+				clear: none;
+				width: 100%;
+
+				.name-section {
+					display: inline-block;
+					width: 100%;
+
+					.first-name-section {
+						float: left;
+						width: calc(50% - 15px);
+					}
+
+					.last-name-section {
+						float: left;
+						width: calc(50% - 15px);
+						margin-left: 30px;
+					}
+				}
+
+				label {
+					float: left;
+					padding-bottom: 15px;
+				}
+
+				input[type="email"],
+				input[type="text"] {
+					float: left;
+					clear: left;
+					border: 1px solid black;
+					padding: 5px;
+					width: 100%;
+				}
+
+				.email-section {
+					clear: both;
+					display: inline-block;
+					width: 100%;
+					padding-top: 15px;
+
+					#mce-EMAIL {
+						width: 100%;
+					}
+				}
+			}
+
+			.button {
+				bottom: 15px;
+				position: absolute;
+				background: $mopar-blue;
+				padding: 10px;
+				color: white;
+				font-size: 12px;
+				@include breakpoint("desktop") {
+					left: calc(66% - 35px);
+				}
+				@include breakpoint("tablet-down") {
+					left: calc(50% - 35px);
+				}
+			}
+		}
+	}
+}

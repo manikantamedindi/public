@@ -1,0 +1,21 @@
+<section class="pricing" id="subscribe">
+	<h2 class="pricing__title">{{ post.get_field('pricing__title') }}</h2>
+	<div class="wrapper">
+		<div class="pricing__choice-wrapper">
+			{% for choice in post.get_field('pricing__choices') %}
+				<article class="pricing__choice">
+					<h3 class="pricing__choice-title">{{ choice.title }}</h3>
+					<div class="pricing__choice-cost">{{ choice.cost }}</div>
+					<div class="pricing__choice-duration">/ {{ choice.duration }}</div>
+					<a class="pricing__choice-link" href="{{ choice.purchase_link }}">Buy Now</a>
+				</article>
+			{% endfor %}
+		</div>
+		{% for info in post.get_field('pricing__information') %}
+			<div class="pricing__info">
+				<h3 class="pricing__info-subtitle">{{ info.subtitle }}</h3>
+				{{ info.content }}
+			</div>
+		{% endfor %}
+	</div>
+</section>

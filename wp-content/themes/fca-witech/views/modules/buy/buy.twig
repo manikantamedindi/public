@@ -1,0 +1,13 @@
+<section class="buy" id="buy">
+	<div class="wrapper">
+		<h2 class="buy__title">{{ post.get_field('buy_title') }}</h2>
+		<span class="buy__description">{{ post.get_field('buy_description') }}</span>
+		<ol class="buy__list">
+		{% for section in post.get_field('buy_sections') %}
+			<li class="buy__item">
+				<h3 class="buy__item-title"><b>{{section.number}}.</b>&nbsp;&nbsp;&nbsp;{{ section.title }}</h3>
+			</li>
+		{% endfor %}
+		</ol>
+	</div>
+</section>

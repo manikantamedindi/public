@@ -1,0 +1,59 @@
+.infohome {
+	background-color: #fff;
+	//margin-top: -90px;
+	margin-bottom: 50px;
+}
+
+#pagewraphome {
+	text-align: center;
+}
+
+.contenthome {
+	width: 25%;
+	max-width: 312px;
+	padding: 5px 15px;
+	margin-bottom: 5px;
+	display: inline-block;
+	vertical-align: top;
+
+	@include breakpoint(handheld) {
+		display:block;
+		width:auto;
+		max-width:none;
+	}
+
+	.p1 {
+		font-size: 18px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		line-height: 24px;
+
+		@include breakpoint(tablet-down) {
+			font-size: 14px;
+		}
+		@include breakpoint(handheld){
+			max-width: 300px;
+			margin: 15px auto;
+		}
+
+		strong{
+			font-weight: normal;
+			@include font('semi-bold');
+		}
+	}
+
+	.title_title1 {
+		@include font('semi-bold');
+
+		font-size: 25px;
+		color: $mopar-blue;
+		text-align: center;
+	}
+}
+
+@media screen and(max-width: 480px) {
+	header {
+		height: auto;
+	}
+}

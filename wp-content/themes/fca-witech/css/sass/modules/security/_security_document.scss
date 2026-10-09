@@ -1,0 +1,82 @@
+.documents {
+	height: 900px;
+	padding-left: 50px;
+	@include breakpoint(tablet-down) {
+		height: 1100px;
+	}
+
+	&__title {
+		color: $blue-gray-2;
+		border-bottom: 2px solid $blue-2;
+		padding-bottom: 10px;
+		margin-left: 100px;
+		margin-top: 100px;
+		font-size: 40px;
+		display: inline-block;
+		@include font( 'light');
+		@include breakpoint(tablet-down) {
+			margin-left: 25px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__list {
+		margin-right: 300px;
+		margin-left: 300px;
+		margin-top: 100px;
+		position: relative;
+		@include breakpoint(tablet-down) {
+			padding-top: 25px;
+			margin-top: 50px;
+			margin-left: 50px;
+			margin-right: 20px;
+		}
+		@include breakpoint(heandheld) {
+			margin-top: 100px;
+		}
+
+		.document_list_item {
+			max-width: 600px;
+			margin-bottom: 100px;
+			margin-left: 75px;
+			@include font( 'light');
+			@include breakpoint(handheld) {
+				margin-left: 40px;
+			}
+
+			&:before {
+				content: $fa-var-file-text-o;
+				font-family: 'FontAwesome';
+				color: $blue-2;
+				float: left;
+				position: absolute;
+				left: -30px;
+				font-size: 70px;
+				@include breakpoint(handheld) {
+					left: -20px;
+					font-size: 50px;
+				}
+			}
+
+			h4 {
+				color: $black;
+				font-weight: normal;
+				font-size: 20px;
+				line-height: 24px;
+			}
+
+			h6 {
+				font-size: 25px;
+				color: $blue-2;
+				margin-bottom: 30px;
+				font-weight: normal;
+
+				&:hover {
+					color: $black;
+					text-decoration: underline;
+					cursor: auto;
+				}
+			}
+		}
+	}
+}

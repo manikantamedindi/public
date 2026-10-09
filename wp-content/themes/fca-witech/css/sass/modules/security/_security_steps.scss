@@ -1,0 +1,113 @@
+.steps {
+	margin: 100px 150px;
+	height: 1200px;
+	max-width: 980px;
+	@include breakpoint(tablet-down) {
+		margin: 50px 75px;
+	}
+
+	ol {
+		list-style-type: none;
+	}
+
+	&__step {
+		position: relative;
+		font-size: 40px;
+		margin-bottom: 90px;
+		display: inline-block;
+		@include breakpoint(tablet-down) {
+			font-size: 30px;
+			margin-bottom: 0;
+		}
+		@include font( 'light');
+
+		&:nth-of-type(1) {
+			&:before {
+				content: "1.";
+				@include font-mod();
+				position: absolute;
+				color: $semi-gray;
+			}
+		}
+
+		&:nth-of-type(2) {
+			&:before {
+				content: "2.";
+				@include font-mod();
+				position: absolute;
+				color: $semi-gray;
+			}
+		}
+
+		&:nth-of-type(3) {
+			&:before {
+				content: "3.";
+				@include font-mod();
+				position: absolute;
+				color: $semi-gray;
+			}
+		}
+	}
+
+	&__title {
+		width: 100%;
+		float: left;
+		margin-left: 40px;
+		margin-bottom: 70px;
+		color: $lighter-semi-gray;
+	}
+
+	&__documents {
+		list-style: none;
+		display: inline-block;
+		position: relative;
+		margin-left: 375px;
+		font-size: 25px;
+		@include breakpoint(tablet-down) {
+			margin-left: 0;
+			padding-left: 5px;
+			margin-left: 5px;
+			margin-bottom: 45px;
+		}
+
+		li {
+			display: inline-block;
+			padding-bottom: 70px;
+
+			span {
+				font-size: 25px;
+				line-height: 30px;
+				color: $blue-2;
+				position: relative;
+				float: left;
+
+				&:hover {
+					color: $blue-2;
+					text-decoration: underline;
+					cursor: auto;
+				}
+				@include breakpoint(tablet-down) {
+					margin-top: 20px;
+					font-size: 20px;
+					padding-left: 60px;
+					margin-left: 0;
+					line-height: 25px;
+				}
+
+				&.document {
+					&:before {
+						content: $fa-var-file-text-o;
+						font-family: 'FontAwesome';
+						position: absolute;
+						left: -100px;
+						font-size: 70px;
+						@include breakpoint(tablet-down) {
+							left: -30px;
+							font-size: 50px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

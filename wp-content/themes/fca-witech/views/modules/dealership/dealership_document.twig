@@ -1,0 +1,44 @@
+<!--
+   <div class="title3">
+        <div class="title4">DOCUMENT</div>
+        <div class="container6">
+          <div class="document_list_item">
+            <h6><a href="https://www.fcawitech.com/wp-content/uploads/2016/08/Overview-of-the-wiTECH-2.pdf">Overview of wiTECH 2.0</a></h6>
+            <h4>If you are new to the wiTECH 2.0 diagnostic application or simplyneed a refresher, then this is the place to start. This article contains all the information you need to get you started with the application.</h4>
+          </div>
+
+          <div class="document_list_item">
+            <h6><a href="https://www.fcawitech.com/wp-content/uploads/2016/08/wiTECH-2-FAQ.pdf">wiTECH 2.0 Frequently Asked Questions</a></h6>
+            <h4>This article is a quick and easy list of commonly discussed issues and topics between technitions.</h4></h4>
+          </div>
+
+          <div class="document_list_item">
+            <h6><a href="https://www.fcawitech.com/wp-content/uploads/2016/08/wiTECH-2-System-Requirements.pdf">System Requirements for wiTECH 2.0</a></h6>
+            <h4>This article relates the requirements in order for dealerships to properly use and execute wiTECH 2.0 for service technitions.</h4></h4>
+          </div>
+
+          <div class="document_list_item">
+            <h6><a href="https://www.fcawitech.com/wp-content/uploads/2016/08/How-To-Conduct-A-Road-Test-with-wiTECH-2.pdf">How To Conduct A Road Test with wiTECH 2.0</a></h6>
+            <h4>Since wiTECH 2.0 requires an active internet connection, this article will tell you how to set up your mobile device in order to use wiTECH 2.0 on the road.</h4>
+          </div>
+        </div>
+    </div>
+ -->
+
+
+
+<div class="documents">
+  {% set documents__title = post.get_field('documents__title') %}
+  <div class="documents__title">{{ documents__title }}</div>
+  <div class="documents__list">
+    {% set documents__document = post.get_field('documents__document') %}
+    {% if documents__document %}
+      {% for item in documents__document %}
+        <div class="document_list_item">
+          <h6><a href="{{ item.link }}">{{ item.title }}</a></h6>
+          <h4>{{ item.description }}</h4>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

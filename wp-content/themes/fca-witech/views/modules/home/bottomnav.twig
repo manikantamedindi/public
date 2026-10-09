@@ -1,0 +1,8 @@
+{% set img = TimberImage(post.get_field('bottomnav__image')) %}
+<div class="bottomnav" style="background-image: url('{{ img.src }}');">
+  	<div class="homebottomnavtitle"><span>{{ post.get_field('bottomnav__title') }}</span></div>
+  	<div class="bottomnav__button_group">
+		<a class="btn1" href="/dealership/">wiTECH 2.0 for Dealerships</a>
+    <a class="btn1" href="/aftermarket/">wiTECH 2.0 for the Aftermarket</a>
+	</div>
+</div>

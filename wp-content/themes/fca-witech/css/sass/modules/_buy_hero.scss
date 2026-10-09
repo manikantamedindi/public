@@ -1,0 +1,119 @@
+//
+// Modules / Hero
+// --------------------------------------------------
+.buy_hero {
+  background-color: $dark-gray;
+  background-position: center;
+  background-size: cover;
+
+  &__content {
+    @include font('light');
+    color: $white;
+    font-size: 40px;
+    line-height: 40px;
+    position: relative;
+    z-index: 2;
+
+    @include notDesktop() {
+      font-size:20px;
+      line-height: 25px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &-underline {
+      @include font('light');
+      line-height: 1;
+      margin: 0 auto 50px auto;
+      border-bottom: 2px solid white;
+      display: inline-block;
+      padding-right: 10px;
+      padding-bottom: 15px;
+      font-size:40px;
+    }
+    &-subtext {
+      font-size: 25px;
+      line-height: 1;
+      margin: 0 auto 50px auto;
+      margin-top:100px;
+
+      @include notDesktop() {
+        font-size:18px;
+      }
+    }
+
+    &-play {
+      @include transition( background 0.25s );
+      background: darken($blue, 10%);
+      color: $white;
+      border-radius: 100px;
+      display: inline-block;
+      height: 100px;
+      line-height: 100px;
+      margin-top: 50px;
+      width: 100px;
+
+      &:after {
+        content: '';
+        font-family: 'font-awesome';
+        font-size: 36px;
+        position: relative;
+        left: 4px;
+      }
+
+      &:hover {
+        background: $blue;
+        color: $white;
+      }
+    }
+  }
+
+  .wrapper {
+    padding: 50px 20px;
+    margin:auto;
+  }
+
+  @media screen and (min-width: 640px) {
+    &__content {
+      &-large {
+        font-size: 65px;
+        margin-top: 50px;
+      }
+    }
+
+    .wrapper {
+      padding-bottom: 100px;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    &__content {
+      &-underline {
+        margin-top: 50px;
+      }
+    }
+
+    .wrapper {
+      padding-bottom: 100px;
+    }
+  }
+
+  @include desktop {
+    height: 100%;
+    min-height: 400px;
+    max-height: 650px;
+
+    &__content {
+      @include transform( translateY(-50%) );
+      position: absolute;
+      top: calc(50% - 60px);
+      width: 700px;
+      left:20%;
+    }
+
+    .wrapper {
+      height: 100%;
+      padding: 0;
+    }
+  }
+}

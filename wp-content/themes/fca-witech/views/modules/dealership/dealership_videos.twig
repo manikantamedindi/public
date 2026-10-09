@@ -1,0 +1,61 @@
+<div class="videos">
+    {% set videos__title = post.get_field('videos__title') %}
+    <h2 class="videos__title">{{ videos__title }}</h2>
+    {% set videos__video = post.get_field('videos__video') %}
+    {% if videos__video %}
+      <div class="videos__video_wrap">
+        {% for item in videos__video %}
+            {% set img = TimberImage(item.img) %}
+            <div class="videos__video">
+                <img class="videos__video__img" src="{{ img.src }}" alt=""/>
+                <h3 class="videos__video__title">{{ item.title }}</h3>
+                <a class="videos__video__button" data-youtube-id="{{ item.youtube_id }}"></a>
+            </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- <div class="videos__video">
+        <img class="videos__video__img" src="{{ theme.link }}/img/video dealership/img_intro.png" alt=""/>
+        <h3 class="videos__video__title">INTRODUCTION TO THE<br>NEW wiTECH 2.0</h3>
+        <a class="videos__video__button" data-youtube-id="xYT93KB-WpA"></a>
+    </div>
+
+    <div class="videos__video">
+        <img class="videos__video__img" src="{{ theme.link }}/img/video dealership/img_testimonials.png" alt=""/>
+        <h3 class="videos__video__title">DEALERSHIP TECHNITION<br>TESTIMONIALS</h3>
+        <a class="videos__video__button" data-youtube-id="_R07nwiAc_E"></a>
+    </div>
+
+    <div class="videos__video">
+        <img class="videos__video__img" src="{{ theme.link }}/img/video dealership/img_testimonials.png" alt=""/>
+        <h3 class="videos__video__title">DEALERSHIP TECHNITION<br>TESTIMONIALS</h3>
+        <a class="videos__video__button" data-youtube-id="_R07nwiAc_E"></a>
+    </div>
+
+    <div class="videos__video">
+        <img class="videos__video__img" src="{{ theme.link }}/img/video dealership/img_setup.png" alt=""/>
+        <h3 class="videos__video__title">HOW TO SET UP A<br>wiTECH 2.0 DEVICE</h3>
+        <a class="videos__video__button" data-youtube-id="uqAqUEsxw68"></a>
+    </div> -->
+
+    <!--<div class="float_box__item">
+              <img src="{{ theme.link }}/img/video dealership/img_overview.png" alt="" /><p>A BRIEF OVERVIEW OF<br>wiTECH 2.0</p>
+              <div class="float_box__play">
+                <a class="float_box__button" id="hero-video-start" data-youtube-id=""></a>
+              </div>
+            </div>
+
+            <div class="float_box__item">
+              <img src="{{ theme.link }}/img/video dealership/img_difference.png" alt="" /><p>THE DIFFERENCE BETWEEN<br>wiTECH 1.0 AND wiTECH 2.0</p>
+              <div class="float_box__play">
+                <a class="float_box__button" id="hero-video-start" data-youtube-id=""></a>
+              </div>
+            </div>-->
+
+    <!-- <div class="videos__video">
+        <img class="videos__video__img" src="{{ theme.link }}/img/video dealership/img_roadtest.png" alt=""/>
+        <h3 class="videos__video__title">DEVICE HOW TO USE wiTECH<br>2.0 ON A ROAD TEST</h3>
+        <a class="videos__video__button" data-youtube-id="G7jYY6j6_nU"></a>
+    </div> -->
+</div>

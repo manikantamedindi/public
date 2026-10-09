@@ -1,0 +1,94 @@
+//
+// Modules / Setup
+// --------------------------------------------------
+.setup {
+  background: $blue;
+  color: $white;
+  padding: 50px 20px;
+
+  &__third {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__third-description {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__third-documents {
+    font-size: 14px;
+    line-height: 24px;
+    list-style: none;
+
+    li {
+      margin-top: 6px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      a {
+        &:before {
+          content: '';
+          display: inline-block;
+          font-family: 'font-awesome';
+          font-size: 16px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+
+  &__third-title {
+    @include font('light');
+    display: block;
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @include font('light');
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media screen and (min-width: 760px) {
+    &__third {
+      box-sizing: border-box;
+      float: left;
+      margin: 0;
+      padding: 0 20px;
+      width: 33%;
+    }
+
+    &__title {
+      margin-left: 20px;
+      margin-top: 50px;
+    }
+
+    .wrapper {
+      @include clearfix;
+    }
+  }
+
+  @include desktop {
+    &__third-documents {
+      margin-bottom: 50px;
+    }
+  }
+}

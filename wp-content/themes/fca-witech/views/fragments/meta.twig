@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {% if function('is_front_page') %}
+    <title>{{ site.name }}</title>
+  {% else %}
+    <title>{{ wp_title }} | {{ site.name }}</title>
+  {% endif %}
+
+  <script src="{{ site.url }}/wp-content/themes/fca-witech/script.js"></script>
+  <!--<script src="{{ site.url }}/wp-content/themes/fca-witech/fonts.compiled.js"></script></-->
+  <!--<script>try{Typekit.load({ async: true });}catch(e){}</script></-->
+  <script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
+  <script src="{{ site.url }}/wp-content/themes/fca-witech/bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="{{ site.url }}/wp-content/themes/fca-witech/bower_components/jquery-modal/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="{{ site.url }}/wp-content/themes/fca-witech/bower_components/jquery-modal/jquery.modal.css" type="text/css" media="screen" />
+
+
+  {{ function('wp_head') }}
+</head>

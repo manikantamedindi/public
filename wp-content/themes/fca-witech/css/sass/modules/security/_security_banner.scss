@@ -1,0 +1,25 @@
+.security_banner {
+	background-size: cover;
+}
+
+.seccontent1 {
+	padding: 150px 0;
+	text-align: center;
+	color: white;
+	font-size: 36px;
+	line-height: 43px;
+	@include font('bold');
+	text-shadow: 0 0 11px rgba(0,0,0,.5);
+	max-width: 800px;
+	margin:0 auto;
+
+	@include breakpoint(tablet-down) {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	@include breakpoint(handheld) {
+		font-size: 20px;
+		line-height: 26px;
+		padding: 150px 50px;
+	}
+}

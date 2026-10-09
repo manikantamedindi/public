@@ -1,0 +1,111 @@
+//
+// Modules / Setup
+// --------------------------------------------------
+
+.buy {
+	background: $white;
+	color: $black;
+	padding: 50px 20px;
+
+	&__item {
+		margin-bottom: 50px;
+		@include breakpoint(tablet-down) {
+			margin-bottom: 20px;
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item-title {
+		@include font( 'light');
+		display: block;
+		font-size: 27px;
+		line-height: 30px;
+		margin-bottom: 20px;
+		color: $blue-gray-2;
+		@include breakpoint(tablet-down) {
+			margin-bottom: 0;
+			line-height: 25px;
+			font-size: 20px;
+			padding-left: 70px;
+			text-indent: -45px;
+		}
+	}
+
+	&__title {
+		@include font( 'light');
+		font-size: 45px;
+		margin-bottom: 50px;
+		color: $blue-gray-2;
+		float: left;
+		width: 450px;
+		padding-bottom: 30px;
+		border-bottom: 2px solid $blue-2;
+		@include breakpoint(tablet-down) {
+			font-size: 40px;
+			width: 100%;
+			float: none;
+			padding-left: 25px;
+		}
+	}
+
+	&__description {
+		@include font( 'light');
+		width: 550px;
+		margin-left: 150px;
+		margin-top: 153px;
+		display: inline-block;
+		font-size: 25px;
+		line-height: 40px;
+		@include breakpoint(tablet-down) {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 0;
+			margin-bottom: 50px;
+			padding-left: 25px;
+			font-size: 20px;
+			line-height: 30px;
+		}
+
+		a {
+			color: $blue-2;
+		}
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@media screen and (min-width: 760px) {
+		&__list {
+			margin-top: 50px;
+			margin-left: 100px;
+		}
+
+		&__item {
+			box-sizing: border-box;
+			float: left;
+			margin: 0;
+			padding: 10px 20px;
+			clear: both;
+		}
+
+		&__title {
+			margin-left: 20px;
+			margin-top: 50px;
+		}
+
+		.wrapper {
+			@include clearfix;
+		}
+	}
+}

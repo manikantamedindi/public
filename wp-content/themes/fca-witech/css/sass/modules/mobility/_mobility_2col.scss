@@ -1,0 +1,115 @@
+.mobilitycoltitle {
+	@include font('semi-bold');
+	padding-top: 175px;
+	color: $mopar-blue;
+	text-align: center;
+	font-size: 40px;
+	line-height: 51px;
+	max-width:400px;
+	margin: 0 auto;
+
+	@include breakpoint(tablet-down) {
+		font-size: 25px;
+		line-height: 32px;
+		padding-top: 125px;
+	}
+	@include breakpoint(handheld) {
+		font-size: 17px;
+		line-height: 22px;
+		padding-top: 30px;
+	}
+}
+
+.mobilitygrid {
+	display: flex;
+	width: 100%;
+	@include breakpoint(tablet-down) {
+	}
+	@include breakpoint(handheld) {
+		display: block;
+	}
+}
+
+.mobilitycol{
+	padding-bottom: 75px;
+
+	@include breakpoint(handheld){
+		padding-bottom:25px;
+	}
+}
+
+.mobilityfluid-flexleft {
+	flex: 1;
+	@include breakpoint(tablet-down) {
+		flex: inherit;
+	}
+}
+
+.mobilityfluid-flexright {
+	flex: 1;
+	background-color: #EFEFEF;
+	@include breakpoint(tablet-down) {
+		flex: inherit;
+	}
+}
+
+.mobilityarrow{
+	position:absolute;
+	left:49%;
+	top:920px;
+
+	&:after{
+		content: $fa-var-play;
+		font-family: 'FontAwesome';
+		font-size:72px;
+		color:white;
+	}
+
+}
+
+.mobilitylistcontainer{
+	margin: 7% 0px 0px 15%;
+	max-width: 500px;
+
+	@include breakpoint(tablet){
+		margin: 12% 0px 0px 15%;
+	}
+
+	@include breakpoint(handheld){
+		margin:0px;
+		padding: 25px;
+		padding-top:40px;
+		padding-left: 50px;
+	}
+}
+
+.mobilitylist {
+	li{
+		font-size:16px;
+		line-height: 49px;
+		@include breakpoint(tablet-down) {
+			font-size: 10px;
+			line-height: 34px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 6px;
+			line-height: 21px;
+		}
+
+		span{
+			@include font('normal');
+			font-size: 28px;
+			line-height: 49px;
+			vertical-align:top;
+			color: black;
+			@include breakpoint(tablet-down) {
+				font-size: 20px;
+				line-height: 34px;
+			}
+			@include breakpoint(handheld) {
+				font-size: 16px;
+				line-height: 21px;
+			}
+		}
+	}
+}

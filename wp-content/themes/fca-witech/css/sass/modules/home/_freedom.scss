@@ -1,0 +1,90 @@
+.freedom {
+	margin: auto;
+	position: relative;
+	display: table;
+	border-spacing: 1px;
+	background: $white;
+	padding: 150px 50px;
+	margin-right: 50px;
+	margin-left: 50px;
+	@include breakpoint(tablet-down) {
+		padding: 15px 100px 50px 5px;
+	}
+	@include breakpoint(handheld) {
+		padding: 10px 50px 50px 5px;
+	}
+
+	&__bigtitle {
+		font-size: 40px;
+		border-bottom: 2px solid $blue-2;
+		float: left;
+		color: $blue-gray-2;
+		line-height: 40px;
+		padding-bottom: 10px;
+		@include font( 'light');
+		@include breakpoint(tablet) {
+			font-size: 30px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 20px;
+		}
+	}
+
+	&__content {
+		font-size: 25px;
+		color: $black;
+		width: 50%;
+		display: table-cell;
+		@include font( 'light');
+		@include breakpoint(tablet-down) {
+			padding-top: 10px;
+			font-size: 20px;
+			float: left;
+			width: 100%;
+			padding-right: 70px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 15px;
+		}
+
+		&__main {
+			padding-bottom: 50px;
+			line-height: 40px;
+			@include breakpoint(tablet-down) {
+				padding-bottom: 20px;
+			}
+			@include breakpoint(handheld) {
+				line-height: 25px;
+			}
+		}
+
+		&__subtitle {
+			color: $blue-gray-2;
+			width: 50%;
+			display: table-cell;
+			@include font( 'semi-bold');
+			padding-top: 50px;
+			@include breakpoint(tablet-down) {
+				padding-bottom: 10px;
+				float: left;
+				text-align: left;
+				width: 100%;
+			}
+			@include breakpoint(handheld) {
+				padding-top: 20px;
+			}
+		}
+
+		&__subcontent {
+			font-size: 20px;
+			padding-left: 20px;
+			padding-top: 10px;
+			@include breakpoint(tablet-down) {
+				font-size: 20px;
+			}
+			@include breakpoint(handheld) {
+				font-size: 15px;
+			}
+		}
+	}
+}

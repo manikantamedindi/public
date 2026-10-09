@@ -1,0 +1,149 @@
+//
+// Modules / Subscribe
+// --------------------------------------------------
+
+.subscribe {
+	background-color: $dark-gray;
+	background-position: center;
+	background-size: cover;
+	color: $white;
+	position: relative;
+	padding: 50px 20px;
+
+	&__form {
+		margin: auto;
+		max-width: 400px;
+	}
+
+	&__form-email {
+		@include font;
+		box-sizing: border-box;
+		color: $black;
+		display: block;
+		font-size: 16px;
+		height: 50px;
+		line-height: 50px;
+		margin: 50px 0 10px;
+		padding: 0 20px;
+		width: 100%;
+
+		&--error {
+			border: 2px solid red;
+		}
+
+		&[disabled] {
+			opacity: 0.75;
+			pointer-events: none;
+		}
+	}
+
+	&__form-submit {
+		@include font;
+		@include transition( 0.25s background );
+		background: $blue-dark;
+		box-sizing: border-box;
+		color: $white;
+		display: block;
+		font-size: 20px;
+		height: 50px;
+		line-height: 50px;
+		text-transform: uppercase;
+		width: 100%;
+
+		&:hover {
+			background: $blue-medium;
+			cursor: pointer;
+		}
+
+		&[disabled] {
+			opacity: 0.75;
+			pointer-events: none;
+		}
+	}
+
+	&__features {
+		font-size: 19px;
+		line-height: 30px;
+		list-style: none;
+
+		li {
+			&:before {
+				content: '•';
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&__success {
+		@include transition( opacity 0.5 );
+		bottom: 7px;
+		font-size: 25px;
+		font-weight: normal;
+		left: 0;
+		line-height: 36px;
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+
+		&--saved {
+			opacity: 1;
+		}
+	}
+
+	&__subtitle {
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 36px;
+	}
+
+	&__title {
+		@include font( 'light');
+		font-size: 45px;
+		margin: 0 auto 50px;
+		text-align: center;
+	}
+	@media screen and (min-width: 440px) {
+		&__features {
+			text-align: center;
+
+			li {
+				&:before {
+					display: none;
+				}
+			}
+		}
+
+		&__subtitle {
+			text-align: center;
+		}
+	}
+	@media screen and (min-width: 640px) {
+		&__form {
+			@include clearfix;
+			margin: 50px auto;
+			max-width: 600px;
+		}
+
+		&__form-email {
+			float: left;
+			margin: 0 20px 0 0;
+			width: 380px;
+		}
+
+		&__form-submit {
+			float: left;
+			width: 200px;
+		}
+
+		&__success {
+			bottom: 30px;
+		}
+
+		&__title {
+			font-size: 65px;
+			margin-top: 50px;
+		}
+	}
+}

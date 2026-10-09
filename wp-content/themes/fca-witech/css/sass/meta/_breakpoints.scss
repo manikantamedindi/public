@@ -1,0 +1,31 @@
+//
+// Meta / Breakpoints
+// --------------------------------------------------
+$handheld-min: 300px;
+$handheld-max: 600px;
+$tablet-min: 601px;
+$tablet-max: 940px;
+$desktop-min: 941px;
+$desktop-max: 1380px;
+@mixin breakpoint($point) {
+	 @if $point == desktop{
+		@media only screen and (min-width: $desktop-min) {
+			 @content;
+		}
+	}
+	@if $point == tablet {
+		 @media only screen and (min-width: $tablet-min) and (max-width: $tablet-max){
+			@content;
+		}
+	}
+	@if $point == tablet-down {
+		 @media only screen and (max-width: $tablet-max){
+			@content;
+		}
+	}
+	@if $point == handheld {
+		 @media only screen and (min-width: $handheld-min) and (max-width: $handheld-max){
+			@content;
+		}
+	}
+}

@@ -1,0 +1,136 @@
+//
+// Modules / Hero
+// --------------------------------------------------
+
+.hero {
+	background-color: $dark-gray;
+	background-position: center;
+	background-size: cover;
+	padding: 0 0 50px 0;
+
+	@include breakpoint(handheld) {
+	}
+
+	.wrapper {
+		padding: 0 20px;
+		display: table;
+		margin: 5px auto;
+		width: calc(100% - 40px);
+		max-width: 1500px;
+	}
+
+	&__play {
+		margin: 80px auto 20px;
+		width: 130px;
+		@include breakpoint(tablet-down) {
+			margin: 30px 0;
+		}
+	}
+
+	&__button {
+		@include transition( background 0.25s);
+		background: $blue-gray-2;
+		color: $white;
+		border-radius: 129px;
+		height: 129px !important;
+		line-height: 129px;
+		width: 129px;
+		margin-left: 0;
+		opacity: 0.75;
+		display: inline-block;
+
+		&:after {
+			content: $fa-var-play;
+			font-family: 'FontAwesome';
+			font-size: 72px;
+			position: relative;
+			left: 45px;
+			top: 0;
+		}
+
+		&:hover {
+			background: $mopar-blue;
+			color: $white;
+		}
+		@include breakpoint(tablet-down) {
+			left: 0;
+			top: 180px;
+			margin-left: calc(50% - 50px);
+		}
+		@include breakpoint(handheld) {
+			top: 210px;
+		}
+	}
+
+	&__content {
+		color: $white;
+		font-size: 25px;
+		font-weight: normal;
+		line-height: 25px;
+		position: relative;
+		z-index: 2;
+		margin: 165px auto 0;
+		max-width:900px;
+
+
+		@include breakpoint(tablet-down) {
+			font-size: 20px;
+			width: 100%;
+			padding-left: 0;
+			text-align: left;
+		}
+		@include breakpoint(handheld) {
+			font-size: 13px;
+			margin-top: 75px;
+		}
+
+		&__text {
+			@include font( 'normal');
+			font-size: 50px;
+			line-height: 61px;
+			text-align: center;
+			@include breakpoint(tablet-down) {
+				text-align: left;
+				font-size: 36px;
+			}
+
+			&:not(:first-of-type) {
+				padding-top: 30px;
+			}
+
+			&-large {
+				text-shadow: 8px 8px 9px rgba(0, 0, 0, .3);
+				@include font( 'bold');
+				font-size: 60px;
+				line-height: 68px;
+				text-align: center;
+				@include breakpoint(tablet-down) {
+					text-align: left;
+				}
+				@include breakpoint(handheld) {
+				}
+			}
+
+			&-small {
+				font-size: 24px;
+				line-height: 28px;
+				text-align: center;
+				@include breakpoint(tablet-down) {
+					text-align: left;
+				}
+				@include breakpoint(handheld) {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+
+.aftermarket{
+	.hero{
+		&__content{
+			margin: 75px auto 50px;
+		}
+	}
+}

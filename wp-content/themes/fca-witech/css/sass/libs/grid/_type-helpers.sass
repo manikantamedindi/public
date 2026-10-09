@@ -1,0 +1,32 @@
+//
+// Grid / Type Fixing
+// --------------------------------------------------
+
+$resize-factor: 16
+
+// this is an example mixin
+// @mixin     font-size
+// @param     $size-value {Number} the font size in pixels
+// @param     $resize-factor {Number} how many pixels per rem
+// @usage:
+// =font-size(0.9)
+
+@mixin font-size($size-value: 1.6)
+	font-size: ($size-value * $resize-factor) + px
+	font-size: $size-value + rem
+
+// IE Friendly line-height
+@mixin line-height($size-value: 1.6)
+	line-height: ($size-value * $resize-factor) + px
+	line-height: $size-value + rem
+
+// Font Smoothing
+@mixin font-smoothing
+	-webkit-font-smoothing: antialiased	
+
+// Italicize
+@mixin italic
+	font-style: italic
+
+@mixin strong
+	font-weight: 700

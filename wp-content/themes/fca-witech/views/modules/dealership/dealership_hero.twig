@@ -1,0 +1,21 @@
+{% set img = TimberImage(post.get_field('hero__image')) %}
+<div class="dealership_hero" style="background-image: url('{{ img.src }}');">
+	{% include 'fragments/header.twig' %}
+	<div class="wrapper">
+		{% set hero__text = post.get_field('hero__text') %}
+        {% set hero__video = post.get_field('hero__video') %}
+
+		{% if hero__text %}
+			<div class="dealership_hero__content">
+				{% for item in hero__text %}
+					<div{% if item.format == 'large' %} class="dealership_hero__content-large"{% endif %}>{{ item.content }}</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+        {% if hero__video %}
+            <div class="dealership_hero__play">
+					<a class="dealership_hero__button" id="hero-video-start" href="#"></a>
+				</div>
+        {% endif %}
+	</div>
+</div>

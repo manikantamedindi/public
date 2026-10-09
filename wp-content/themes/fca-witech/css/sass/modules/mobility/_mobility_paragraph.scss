@@ -1,0 +1,17 @@
+.mobility_paragraph {
+	color: black;
+	font-size: 30px;
+	text-align: center;
+	@include font('normal');
+	line-height: 51px;
+	max-width: 775px;
+	margin: 50px auto;
+	@include breakpoint(tablet-down) {
+		padding: 0px 50px;
+		margin-bottom: 50px;
+	}
+	@include breakpoint(handheld){
+		font-size: 14px;
+		line-height: 17px;
+	}
+}

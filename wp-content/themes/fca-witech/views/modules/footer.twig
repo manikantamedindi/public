@@ -1,0 +1,8 @@
+<footer class="footer">
+	<div class="wrapper">
+		<span class="footer__copyright">{{ options.copyright }}</span>
+		{% for item in menu_footer.get_items %}
+			<a class="footer__link" href="{{ item.get_link }}">{{ item.title }}</a>
+		{% endfor %}
+	</div>
+</footer>

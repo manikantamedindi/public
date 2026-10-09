@@ -1,0 +1,8 @@
+{% set img = TimberImage(post.get_field('bottomnav__image')) %}
+<div class="bottomnav2" style="background-image: url('{{ img.src }}');">
+  	<h3><span>{{ post.get_field('bottomnav__title') }}</span></h3>
+    <h4>For special Fleet Pricing, contact us here.</h4>
+  	<div class="bottomnav__button_group">
+    <a class="btn" href="/contact/">Contact Us</a>
+	</div>
+</div>

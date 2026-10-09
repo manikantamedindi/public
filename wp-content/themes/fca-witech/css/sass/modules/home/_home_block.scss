@@ -1,0 +1,54 @@
+.homecenter {
+	margin: auto;
+	width: 60%;
+	padding: 0px 20px 120px 20px;
+	text-align: center;
+	@include breakpoint(tablet-down) {
+		font-size: 25px;
+	}
+	@include breakpoint(handheld) {
+		width: 100%;
+	}
+}
+
+.hometitle {
+	@include font( 'semi-bold');
+	margin: auto;
+	width: 85%;
+	padding: 20px;
+	text-align: center;
+	color: $mopar-blue;
+	font-size: 40px;
+	margin-top: 75px;
+	padding-left: 0;
+	padding-right: 0;
+	line-height: 36px;
+	@include breakpoint(tablet-down) {
+		font-size: 32px;
+		width: 100%;
+		margin-left: 5px;
+		margin-right: 5px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@include breakpoint(handheld) {}
+}
+
+.homecontentblock {
+	margin: auto;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	font-size: 26px;
+	line-height: 36px;
+	@include breakpoint(tablet-down) {
+		width: 100%;
+		font-size: 25px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	@include breakpoint(handheld) {
+		font-size: 16px;
+		line-height: 30px;
+	}
+}

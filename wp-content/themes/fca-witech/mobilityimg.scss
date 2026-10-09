@@ -1,0 +1,144 @@
+//colors
+$main_blue: #0066cc;
+$black: black;
+$lightgray: #ebebeb;
+$white: white;
+$black_1: rgba(0, 0, 0, 0.1);
+$darkgray: #666b85;
+$white: rgba(256, 256, 256, 0.1);
+$gray: #c1c3d1;
+
+//fonts
+$font_1: proxima_novalight;
+$font_2: sans-serif;
+
+body {
+	font-family: $font_1, $font_2;
+	font-size: 100%;
+	margin: 25px auto 25px auto;
+	width: 1000px;
+}
+h1 {
+	text-align: center;
+	margin-bottom: 15px;
+	color: $main_blue;
+	font-size: 62px;
+	font-weight: 900;
+}
+p {
+	text-align: left;
+	margin-top: 55px;
+	margin-bottom: 25px;
+	margin-left: 5px;
+	color: $black;
+	font-size: 14px;
+	font-weight: 200;
+	line-height: 25px;
+}
+.h6 {
+	text-align: left;
+	margin-bottom: 25px;
+	margin-left: 30px;
+	margin-right: 60px;
+	color: $black;
+	font-size: 14px;
+	font-weight: 200;
+	line-height: 25px;
+}
+.card {
+	background-color: $lightgray;
+	border-left: solid 10px $main_blue;
+	margin: auto 55px auto 0px;
+    padding-top: 20px;
+    padding-bottom: 1px;
+}
+.wrapper {
+	.div1 {
+		height: 100px;
+		width: 470px;
+		float: left;
+	}
+	.div2 {
+		height: 100px;
+		width: 470px;
+		float: right;
+	}
+	.divkader {
+		padding: 10px;
+	}
+}
+.table-fill {
+	background: $white;
+	border-radius: 3px;
+	border-collapse: collapse;
+	height: 320px;
+	margin: auto;
+	max-width: 600px;
+	padding: 5px;
+	width: 100%;
+	box-shadow: 0 5px 10px $black_1;
+	animation: float 5s infinite;
+}
+th {
+	color: $white;
+	background: $main_blue;
+	font-size: 14px;
+	font-weight: 900;
+	padding: 24px;
+	text-align: left;
+	text-shadow: 0 1px 1px $black_1;
+	vertical-align: middle;
+	&:first-child {
+		border-top-left-radius: 3px;
+	}
+	&:last-child {
+		border-top-right-radius: 3px;
+		border-right: none;
+	}
+	&.text-left {
+		text-align: center;
+	}
+	&.text-center {
+		text-align: center;
+	}
+	&.text-right {
+		text-align: center;
+	}
+}
+tr {
+	color: $darkgray;
+	font-size: 16px;
+	font-weight: normal;
+	text-shadow: 0 1px 1px $white;
+	&:nth-child(odd) td {
+		background: $lightgray;
+	}
+}
+td {
+	background: $white;
+	padding: 20px;
+	text-align: left;
+	vertical-align: middle;
+    color: $main_blue;
+	font-weight: 800;
+	font-size: 13px;
+	text-shadow: -1px -1px 1px $black_1;
+	border-right: 1px solid $gray;
+	&.text-left {
+		text-align: center;
+	}
+	&.text-center {
+		text-align: left;
+	}
+	&.text-right {
+		text-align: left;
+	}
+}
+div.table-title {
+	display: block;
+	margin: auto;
+	max-width: 600px;
+	padding: 5px;
+	width: 100%;
+	float: left;
+}

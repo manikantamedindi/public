@@ -1,0 +1,30 @@
+//
+// Modules / Device
+// --------------------------------------------------
+.device {
+  background: $light-gray;
+  padding: 50px 20px 0 20px;
+
+  &__image {
+    display: block;
+    margin: auto;
+    max-width: 1055px;
+    width: 100%;
+  }
+
+  &__text {
+    @include font('light');
+    color: $blue-gray;
+    font-size: 45px;
+    margin: 0 auto 50px auto;
+    max-width: 780px;
+    text-align: center;
+  }
+
+  @include desktop {
+    &__text {
+      font-size: 65px;
+      margin-top: 50px;
+    }
+  }
+}

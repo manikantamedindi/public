@@ -1,0 +1,4 @@
+{% set img = TimberImage(post.get_field('security__divider__image')) %}
+<div class="security__divider">
+	<div class="security__divider" style="background-image: url('{{ img.src }}');"></div>
+</div>

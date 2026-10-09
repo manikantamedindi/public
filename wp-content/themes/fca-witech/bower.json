@@ -1,0 +1,23 @@
+{
+  "name": "fcawitech",
+  "version": "0.0.3",
+  "homepage": "https://fcawitech.com",
+  "authors": [
+    "Clayton Yocom <clayton@workwithgrid.com>"
+  ],
+  "license": "unlicensed",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "latest",
+    "jquery-modal": "latest",
+    "bourbon": "latest",
+    "neat": "latest"
+  }
+}

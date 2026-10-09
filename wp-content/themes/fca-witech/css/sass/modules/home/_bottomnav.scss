@@ -1,0 +1,50 @@
+.bottomnav {
+	background: $white;
+	padding: 150px 10px;
+	position: relative;
+
+	&__button_group {
+		text-align: center;
+
+		.btn1 {
+			display: inline-block;
+			font-size: 20px;
+			@include font( 'bold');
+			text-decoration: none;
+			background: $blue-2;
+			color: $white;
+			padding: 15px 40px;
+			margin: 0 10px 20px;
+			box-shadow: -5px 5px 21px #191919;
+			-webkit-border-radius: 7;
+			-moz-border-radius: 7;
+			-o-border-radius: 7;
+			border-radius: 7px;
+			@include breakpoint(tablet-down) {
+				font-size: 20px;
+			}
+			@include breakpoint(handheld) {
+				font-size: 16px;
+			}
+
+			&:hover {
+				background: lighten($blue-2, 30%);
+				text-decoration: none;
+			}
+		}
+	}
+
+	.homebottomnavtitle {
+		color: $white;
+		font-size: 48px;
+		padding: 0 0 35px;
+		text-align: center;
+		@include font( 'semi-bold');
+		@include breakpoint(tablet-down) {
+			font-size: 40px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 25px;
+		}
+	}
+}

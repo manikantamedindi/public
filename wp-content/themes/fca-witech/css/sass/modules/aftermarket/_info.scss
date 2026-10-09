@@ -1,0 +1,88 @@
+.bodyaftermarket {
+	padding: 75px 0 50px;
+	background-color: #F1F1F1;
+}
+
+#pagewrapaftermarket {
+
+	text-align: center;
+
+	@include breakpoint(handheld) {
+	}
+}
+
+.aftermarketinfo {
+	padding: 0 15px 25px;
+	text-align: center;
+
+	.title {
+		font-size: 39px;
+		color: $mopar-blue;
+		margin-bottom: 55px;
+	}
+}
+
+.aftermarket__content {
+	width:25%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 30px;
+
+	@include breakpoint(tablet-down){
+		width:100%;
+		padding: 0px 50px;
+		margin: 0 0 50px;
+	}
+
+	a {
+		font-size: 20px;
+		text-align: center;
+		padding-left: 20px;
+		padding-right: 20px;
+		@include breakpoint(tablet-down) {
+			padding-left: 0;
+			padding-right: 0;
+			font-size: 16px;
+			line-height:22px;
+		}
+
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+	p {
+		font-size: 24px;
+		line-height: 35px;
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		padding-left: 20px;
+		padding-right: 20px;
+		@include breakpoint(tablet-down) {
+			padding-left: 0;
+			padding-right: 0;
+			font-size: 16px;
+			line-height:22px;
+		}
+	}
+
+	.title_title {
+		font-size: 30px;
+		line-height: 39px;
+		@include font('semi-bold');
+		color: black;
+		text-align: center;
+		padding-bottom:25px;
+
+		@include breakpoint(tablet-down) {
+			font-size: 20px;
+			line-height:26px;
+		}
+	}
+}
+
+footer {
+	clear: both;
+	padding: 0 15px;
+}

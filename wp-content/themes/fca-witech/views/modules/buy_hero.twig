@@ -1,0 +1,14 @@
+{% set img = TimberImage(post.get_field('hero__image')) %}
+{% include 'fragments/buy_header.twig' %}
+<div class="buy_hero" style="background-image: url('{{ img.src }}');">
+	<div class="wrapper">
+		{% set hero__text = post.get_field('hero__text') %}
+		{% if hero__text %}
+			<div class="buy_hero__content">
+				{% for item in hero__text %}
+					<div{% if item.format == 'underline' %} class="buy_hero__content-underline"{% endif %}{% if item.format == 'subtext' %} class="buy_hero__content-subtext"{% endif %}>{{ item.content }}</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+</div>

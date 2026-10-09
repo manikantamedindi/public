@@ -1,0 +1,118 @@
+.bigbanner {
+	background-size: cover;
+	background-position: center;
+	height: 800px;
+	position: relative;
+	@include breakpoint(tablet-down) {
+		height: 500px;
+	}
+	@include breakpoint(handheld) {
+		height: 400px;
+	}
+
+	.wrapper {
+		margin: auto;
+		position: relative;
+		display: inline-block;
+		margin-left: 200px;
+		height: 100%;
+		width: calc(100% - 200px);
+		@include breakpoint(tablet-down) {
+			margin-left: 100px;
+			width: calc(100% - 100px);
+		}
+		@include breakpoint(handheld) {
+			margin-left: 30px;
+			width: calc(100% - 30px);
+		}
+	}
+
+	&__content {
+		display: inline-block;
+		width: 100%;
+		padding-left: 20px;
+		height: 100%;
+		float: left;
+		background: rgba($blue-gray-2, .43);
+		@include breakpoint(handheld) {
+			padding-left: 10px;
+		}
+	}
+
+	h1 {
+		color: white;
+		margin: 150px 0 0;
+		font-size: 40px;
+		font-weight: normal;
+		display: inline-block;
+		position: relative;
+		padding-bottom: 20px;
+		@include font( 'light');
+
+		&:before {
+			border-bottom: 2px solid $white;
+			content: '';
+			height: 1px;
+			width: 105%;
+			position: absolute;
+			bottom: 0;
+			left: -2%;
+		}
+		@include breakpoint(tablet-down) {
+			font-size: 25px;
+			margin-top: 50px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 20px;
+		}
+	}
+
+	h2 {
+		color: $white;
+		font-size: 36px;
+		margin-left: 50px;
+		margin-top: 50px;
+		width: 500px;
+		line-height: 48px;
+		font-weight: normal;
+		@include font-mod( 'italic');
+		@include breakpoint(tablet-down) {
+			font-size: 19px;
+			line-height: 25px;
+			width: 300px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 15px;
+		}
+	}
+
+	h4 {
+		color: $white;
+		font-size: 25px;
+		line-height: 50px;
+		margin-top: 80px;
+		margin-left: 50px;
+		width: 400px;
+		font-weight: normal;
+		position: relative;
+
+		&:before {
+			content: "*";
+			position: absolute;
+			left: -15px;
+		}
+		@include font();
+		@include breakpoint(tablet-down) {
+			font-size: 15px;
+			line-height: 20px;
+			width: 300px;
+			margin-top: 40px;
+		}
+		@include breakpoint(handheld) {
+			font-size: 15px;
+			line-height: 20px;
+			width: 300px;
+			margin-top: 40px;
+		}
+	}
+}
