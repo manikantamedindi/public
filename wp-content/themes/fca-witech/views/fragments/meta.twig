@@ -24,6 +24,8 @@
         if ($('#hero-inline-video').length) {
           var player = new Vimeo.Player($('#hero-inline-video')[0]);
           var isPlaying = false; 
+          var userManuallyPaused = false;
+          var pausedByScroll = false;
 
           var $btn = $('#hero-video-start');
           // Start in loading state
@@ -46,11 +48,65 @@
             if ($btn.hasClass('is-loading')) return; // do nothing if still loading
 
             if (isPlaying) {
+              userManuallyPaused = true;
+              pausedByScroll = false;
               player.pause();
             } else {
+              userManuallyPaused = false;
+              pausedByScroll = false;
               player.play();
             }
           });
+
+          // Stop video on scroll if hero section ends
+          var heroSection = $('#hero-inline-video').closest('.hero')[0] || $('.hero')[0];
+          if (heroSection) {
+            var handleSectionVisibility = function(isSectionEnded) {
+              if (isSectionEnded) {
+                // Section ended / scrolled out of view: stop video
+                player.getPaused().then(function(paused) {
+                  if (!paused) {
+                    pausedByScroll = true;
+                    player.pause().catch(function() {});
+                  }
+                }).catch(function() {
+                  if (isPlaying) {
+                    pausedByScroll = true;
+                    player.pause().catch(function() {});
+                  }
+                });
+              } else {
+                // Section back in view: resume if it was paused by scrolling
+                if (pausedByScroll && !userManuallyPaused) {
+                  player.play().then(function() {
+                    pausedByScroll = false;
+                  }).catch(function() {});
+                }
+              }
+            };
+
+            if ('IntersectionObserver' in window) {
+              var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                  handleSectionVisibility(!entry.isIntersecting);
+                });
+              }, { threshold: 0 });
+              observer.observe(heroSection);
+            }
+
+            var ticking = false;
+            $(window).on('scroll resize', function() {
+              if (!ticking) {
+                window.requestAnimationFrame(function() {
+                  var rect = heroSection.getBoundingClientRect();
+                  var isEnded = (rect.bottom <= 0 || rect.top >= window.innerHeight);
+                  handleSectionVisibility(isEnded);
+                  ticking = false;
+                });
+                ticking = true;
+              }
+            });
+          }
         }
       }, 100);
     });
