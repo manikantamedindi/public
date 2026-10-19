@@ -21,7 +21,8 @@
  -->
 
 {% set img = TimberImage(post.get_field('bigbanner__image')) %}
-<div class="bigbannerdealership" style="background-image: url('{{ img.src }}');">
+{% set bg_url = img.src ? img.src : '/wp-content/uploads/2016/10/dealershipbanner.png' %}
+<div class="bigbannerdealership" style="background-image: url('{{ bg_url }}');">
 	<div class="wrapper">
 		<div class="bigbanner__content">
       {% if post.get_field('bigbanner__title') %}
