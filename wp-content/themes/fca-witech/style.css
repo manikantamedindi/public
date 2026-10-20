@@ -4421,7 +4421,10 @@ a:hover {
 }
 
 .bottomnav {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   padding: 150px 10px;
   position: relative;
 }

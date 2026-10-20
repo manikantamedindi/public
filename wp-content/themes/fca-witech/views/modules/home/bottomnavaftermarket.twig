@@ -1,4 +1,4 @@
 {% set img = TimberImage(post.get_field('bottomnav__image')) %}
-<div class="bottomnav2" style="background-image: url('{{ img.src }}');">
+<div class="bottomnav2" style="background-image: url('{{ img.src }}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
   	<h3><span>{{ post.get_field('bottomnav__title') }}</span></h3>
 </div>

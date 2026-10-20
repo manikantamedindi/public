@@ -7,8 +7,8 @@
         {% for item in videos__video %}
             {% set img = TimberImage(item.img) %}
             {% set yId = item.youtube_id %}
-            {% if 'How to set up' in item.title or item.youtube_id == 'uqAqUEsxw68' %}
-                {% set yId = 'https://www.youtube.com/watch?v=U9WkXeVRWRk&t=83s' %}
+            {% if 'How to set up' in item.title or item.youtube_id == 'uqAqUEsxw68' or 'U9WkXeVRWRk' in item.youtube_id %}
+                {% set yId = 'https://www.youtube.com/watch?v=U9WkXeVRWRk' %}
             {% endif %}
             <div class="videos__video">
                 <div class="videos__video__thumb" style="position: relative; line-height: 0;">
@@ -87,6 +87,9 @@ $(document).ready(function() {
                 var parts = yId.split(/[?&]t=/);
                 yId = parts[0];
                 startSeconds = parseInt(parts[1], 10);
+            }
+            if (yId === "U9WkXeVRWRk") {
+                startSeconds = 0;
             }
             
             $("#dealership_video").addClass("video--active");
