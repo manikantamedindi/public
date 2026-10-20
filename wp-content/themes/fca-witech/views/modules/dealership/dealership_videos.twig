@@ -6,10 +6,14 @@
       <div class="videos__video_wrap">
         {% for item in videos__video %}
             {% set img = TimberImage(item.img) %}
+            {% set yId = item.youtube_id %}
+            {% if 'How to set up' in item.title or item.youtube_id == 'uqAqUEsxw68' %}
+                {% set yId = 'https://www.youtube.com/watch?v=U9WkXeVRWRk&t=83s' %}
+            {% endif %}
             <div class="videos__video">
                 <div class="videos__video__thumb" style="position: relative; line-height: 0;">
                     <img class="videos__video__img" src="{{ img.src }}" alt="" style="width: 100%; display: block;" />
-                    <a class="videos__video__button" data-youtube-id="{{ item.youtube_id }}"></a>
+                    <a class="videos__video__button" data-youtube-id="{{ yId }}"></a>
                 </div>
                 <h3 class="videos__video__title">{{ item.title }}</h3>
             </div>
@@ -69,7 +73,21 @@ $(document).ready(function() {
     setTimeout(function() {
         $(".videos__video__button").off('click').on('click', function(e) {
             e.preventDefault();
-            var yId = $(this).data("youtube-id");
+            var rawId = $(this).attr("data-youtube-id") || $(this).data("youtube-id") || "";
+            var yId = String(rawId).trim();
+            var startSeconds = 0;
+            
+            // Parse full URL or timestamp parameter
+            if (yId.indexOf("youtube.com") !== -1 || yId.indexOf("youtu.be") !== -1) {
+                var match = yId.match(/(?:v=|\/embed\/|\.be\/)([a-zA-Z0-9_-]{11})/);
+                if (match) yId = match[1];
+                var tMatch = rawId.match(/[?&]t=([0-9]+)s?/);
+                if (tMatch) startSeconds = parseInt(tMatch[1], 10);
+            } else if (yId.indexOf("t=") !== -1) {
+                var parts = yId.split(/[?&]t=/);
+                yId = parts[0];
+                startSeconds = parseInt(parts[1], 10);
+            }
             
             $("#dealership_video").addClass("video--active");
             
@@ -83,12 +101,20 @@ $(document).ready(function() {
             $("#dealership_video__placeholder").remove();
             $("#dealership_video .dealership_video__wrapper").append('<div class="dealership_video__placeholder" id="dealership_video__placeholder"></div>');
             
+            var pVars = { controls: 1, modestbranding: 0, rel: 0, showinfo: 1, fs: 1, autoplay: 1 };
+            if (startSeconds > 0) {
+                pVars.start = startSeconds;
+            }
+
             // Create a completely fresh player with the correct video ID
             window.youtubePlayer = new YT.Player('dealership_video__placeholder', {
                 videoId: yId,
-                playerVars: { controls: 1, modestbranding: 0, rel: 0, showinfo: 1, fs: 1, autoplay: 1 },
+                playerVars: pVars,
                 events: {
                     onReady: function(event) {
+                        if (startSeconds > 0) {
+                            try { event.target.seekTo(startSeconds, true); } catch(e) {}
+                        }
                         event.target.playVideo();
                     },
                     onStateChange: function(event) {
